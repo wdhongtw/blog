@@ -10,7 +10,7 @@ date:   2019-01-12 23:40:36 +0800
 
 任何人只要申請一個 GitHub 帳號，都可以免費的享有這個服務。
 
-當然，考量到 GitHub 只是把我們放在版本褲上的檔案讓別人透過瀏覽器瀏覽，
+當然，考量到 GitHub 只是把我們放在版本庫上的檔案，讓別人透過瀏覽器瀏覽，
 那種需要用到資料庫的可互動網站基本上是很難達成。
 但若我們只是要經營一個部落格，或是存放專案文件等靜態網站時，GitHub Page
 就會是個很合適且方便的選擇。
@@ -22,7 +22,7 @@ date:   2019-01-12 23:40:36 +0800
 
 目前 GitHub Page 有兩類的站台，一類是 User Page、另一類是 Project Page。
 (其實還有 Organization Page，但這邊就不花時間贅述) User Page 與 Project Page
-最主要的在專案名稱的限制，與網站的 url 格式這兩點。簡單整理如下
+最主要的差別在於專案名稱的限制，與網站的 URL 格式這兩點。簡單整理如下
 
 User Page 特點:
 
@@ -88,11 +88,11 @@ GitHub Page 的使用方式也可以簡單分成兩種。
 
 接下來會介紹使用 Jekyll，並讓 GitHub 幫忙 build 與 host 網站的簡單步驟。
 
-參照 [官方介紹](https://pages.github.com/) 的說明，最簡單的方式其實只需要
+參照 [官方介紹](https://pages.github.com/) 的說明，最簡單的方式，其實只需要
 我們點開 project 的 GitHub 設定頁面，找到 GitHub Page 的設定選項，設定一個
 Jekyll 使用的主題，並用 Markdown 寫一個首頁文章即可。
 
-用此方法會專案內產生首頁的 `index.md` 檔案及一個 Jekyll 的設定檔 `_config.yml`。
+用此方法會在專案內產生首頁的 `index.md` 檔案及一個 Jekyll 的設定檔 `_config.yml`。
 檔案內僅一行你選的主題名稱
 
 ``` yaml
@@ -133,12 +133,12 @@ git add .
 git commit
 ```
 
-之後將專案 push 上 GitHub，並置專案設定內啟用 GitHub Page 即可。
-沒意外的話，十秒內大概就可以在對應的 URL 看到生成好的網站了。
+之後將專案 push 上 GitHub，並至專案設定內啟用 GitHub Page 即可。
+沒意外的話，大概十秒內就可以在對應的 URL 看到生成好的網站了。
 
 有關 Jekyll 的安裝說明或其他細部設定，可參考 [官方網站](https://jekyllrb.com/)。
 
-## GitHub Page 個人 Domain 的 SSL 憑證處理
+## 在 GitHub Page 服務上使用個人客製的網址
 
 如果不想使用 `<username>.github.io` 來提供自己的網站，而是透過自己購買的域名，
 所需的麻煩差事 GitHub Page 也幫我們做得好了。
@@ -148,11 +148,11 @@ git commit
 
 假設我們想在 `blog.example.com` 提供我們的網站，只需要在 DNS 設定中加入一筆
 `CNAME`，將 `blog.example.com` 指向 `<username>.github.io`。並去 GitHub Page
-所用的 GitHub 專案設定頁面內，在 Custom domain 內填入 `blog.example.com` 即可。
+所用的 GitHub 專案設定頁面內，在 Custom domain 欄位內填入 `blog.example.com` 即可。
 
 設定完後，即可透過 `blog.example.com` 瀏覽我們要的網站。
 同時 GitHub 也會在一天內生出對應的 SSL 憑證，即使透過 `blog.example.com` 瀏覽，
-也可以使用 HTTPS protocol。 :D
+也可以享有 HTTPS protocol 帶來的安全性。 :D
 
 ## 雜談
 
