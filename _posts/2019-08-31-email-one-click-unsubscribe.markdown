@@ -36,7 +36,7 @@ List-Unsubscribe: <https://www.linkedin.com/e/v2?e=6f948d7f&t=ad69-4827&...>
 Network Working Group                                      G. Neufeld
 Request for Comments: 2369                                      Nisto
 Category: Standards Track                                     J. Baer
-                                                    SkyWeyr Technologies
+                                                 SkyWeyr Technologies
                                                             July 1998
 
 
