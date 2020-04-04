@@ -1,42 +1,40 @@
-## Welcome to GitHub Pages
+# Space for Personal Blog
 
-You can use the [editor on GitHub](https://github.com/wdhongtw/blog/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+This blog is hosted on GitHub Pages and rely totally on
+the Ruby gem, `github-page`.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+For more detail, see official documents.
 
-### Markdown
+- [Working with GitHub Pages - GitHub Help](https://help.github.com/en/github/working-with-github-pages)
+- [GitHub Pages | Jekyll](https://jekyllrb.com/docs/github-pages/)
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+## Setup Locally
 
-```markdown
-Syntax highlighted code block
+Assume that Ubuntu 18.04 is used.
 
-# Header 1
-## Header 2
-### Header 3
+Install Ruby and libraries.
 
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+``` shell
+apt install ruby bundler zlib1g-dev
+# zlib1g-dev is required by nokogiri
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+Run bundle install in project folder, install gems into `vendor/bundle`.
 
-### Jekyll Themes
+``` shell
+bundle install --path vendor/bundle --without test
+```
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/wdhongtw/blog/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+Note that the command above may not run successfully as normal user
+in Windows WSL. The following workaround may help.
 
-### Support or Contact
+``` shell
+sudo bundle install --path vendor/bundle --without test
+sudo chown -R <username>: vendor/bundle .bundle/config Gemfile.lock
+```
 
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+## Usage
 
-### Bootstrap and Run Local Sever
-
-Use `bundle install` to install required gems. And use
-`bundle exec jekyll serve` to run local server.
+``` shell
+bundle exec jekyll serve
+```

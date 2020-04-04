@@ -4,3 +4,8 @@ _site
 .jekyll-cache
 
 Gemfile.lock
+
+## Environment normalization:
+/.bundle/
+/vendor/bundle
+/lib/bundler/man/
