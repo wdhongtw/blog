@@ -149,6 +149,18 @@ index 31c5f40..d4511ae 100644
 - 將 master node 上的 user token 設定檔 mount 至 API server 的 container 內
 - 設定 API server 去使用此 token 檔案
 
+### User Token File 後續維護
+
+若之後需要修改 user token file，因為一些[上游的限制](https://github.com/kubernetes/kubernetes/issues/44713)，
+API server pod 無法觀測到檔案的修改，即使 kill pod 再重啟也無法使用新的 token file。
+
+不過我們可以透過修改 API server 描述檔的方式，穩定地重新部屬 API server，讓新的 token file 生效。
+
+- 編輯 `/etc/kubernetes/tokens.csv`
+- 修改 API server 描述檔 `/etc/kubernetes/manifests/kube-apiserver.yaml`
+  - 加入或修改 `metadata.annotations.lastModify` 欄位，填入合適字串
+- 修改後 kubelet 會偵測到檔案異動，並重新 apply `apiserver` pod
+
 ### User kubeconfig 設定
 
 使用 `kubectl` 設定 user token
