@@ -4,22 +4,22 @@ title: 保護存在檔案系統上的 Docker 登入密碼
 ---
 
 在企業內部的工作環境中，常會碰到需要存取 private registry 上的 image 的狀況。
-以 Docker 的工作流程來說，一般即是透過執行 `docker login` 來存取 private registry。
-不過，若是沒先設定好 *docker credential helper*，執行 `docker login` 會導致
+以 Docker 的工作流程來說，一般要透過執行 `docker login` 來存取 private registry。
+不過，若事先毛設定好 *docker credential helper*，執行 `docker login` 會導致
 我們的密碼 / API token 直接以明文的方式寫在檔案系統上。
 
-這邊筆記說明如何在 Linux 環境下安裝與設定 *docker credential helper*。
+這篇筆記說明如何在 Linux 環境下安裝與設定 *docker credential helper*。
 
 ## Installation
 
 至 docker/docker-credential-helpers 的 GitHub release 頁面下載最新版本的
-`docker-credential-secretservice`.
+`docker-credential-secretservice`。
 
 ```shell
 curl -L https://github.com/docker/docker-credential-helpers/releases/download/v0.6.3/docker-credential-secretservice-v0.6.3-amd64.tar.gz >secretservice.tar.gz
 ```
 
-解壓縮並把執行檔放置個人喜愛的 PATH 資料夾。
+解壓縮並把執行檔放到任意一個 PATH 資料夾內。
 
 ```shell
 tar -zxv -f secretservice.tar.gz
@@ -56,7 +56,7 @@ $EDITOR ~/.docker/config.json
 docker logout registry.example.com
 ```
 
-(重新)登入該 registry。
+(重新) 登入該 registry。
 
 ```shell
 docker login registry.example.com
@@ -72,7 +72,7 @@ docker login registry.example.com
 }
 ```
 
-若有安裝 Seahorse 程式的話，可以看到 secret 被放在 Login keyring 中。
+若有安裝 Seahorse 程式的話，此時可以看到 secret 被放在 Login keyring 中。
 
 如果設定錯誤的話，登入資訊會以編碼過的方式呈現在該紀錄中。
 
