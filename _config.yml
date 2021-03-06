@@ -22,10 +22,6 @@ url: "https://blog.bitisle.net" # the base hostname & protocol for your site, e.
 twitter_username: wdhongtw
 github_username:  wdhongtw
 
-# The minima theme do follow this convention in default.html
-# Language attribute can be overwrite by front matter in each post.
-lang: zh-Hant
-
 # Build settings
 markdown: kramdown
 theme: minima
