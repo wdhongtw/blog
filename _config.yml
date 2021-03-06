@@ -19,7 +19,7 @@ description: >- # this means to ignore newlines until "baseurl:"
   一倍工程師的小天地
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://blog.bitisle.net" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: wdhongtw
+twitter_username:
 github_username:  wdhongtw
 
 # The minima theme do follow this convention in default.html
