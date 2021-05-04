@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 延長 / 縮短 GPG 金鑰的過期時間 (Expire Time)
+title: 延長或縮短 GPG 金鑰的過期時間 (Expiration Time)
 ---
 
 筆者在 2018 年的時候開了第一個真的有在長期使用的 GPG 金鑰。
@@ -22,8 +22,9 @@ title: 延長 / 縮短 GPG 金鑰的過期時間 (Expire Time)
 > but you actually do. Why? Because you can always extend your expiration date,
 > even after it has expired!
 
-使用者應該設一個較短的有效時間，並在後續有需要時延展過期時間。
 See: [OpenPGP Best Practices - riseup.net](https://riseup.net/en/security/message-security/openpgp/best-practices#use-an-expiration-date-less-than-two-years)
+
+使用者應該設一個較短的有效時間，並在後續有需要時延展過期時間。
 
 GPG key 可以自己修改金鑰的過期時間，是因為 GPG key 和 X.509
 憑證有著本質上的區別。
