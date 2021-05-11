@@ -10,7 +10,7 @@ GitHub 開始支援使用 security key 進行 Git 操作啦！
 沒想到 Yubico 和 GitHub 也剛好在昨天一起同步更新 blog 文章，通知大家這個新功能。
 喜極而泣..
 
-- [Security keys are now supported for SSH Git operations | The GitHub Blog](https://github.blog/2021-05-10-security-keys-supported-ssh-git-operations/)
+- [Security keys are now supported for SSH Git operations - The GitHub Blog](https://github.blog/2021-05-10-security-keys-supported-ssh-git-operations/)
 - [GitHub now supports SSH security keys - Yubico](https://www.yubico.com/blog/github-now-supports-ssh-security-keys/)
 
 以下簡單介紹如何使用這個新功能。
