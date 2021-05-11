@@ -110,6 +110,10 @@ ssh-keygen -t ecdsa-sk -O no-touch-required
 若要避免此問題，就要用上 authenticator 的另一個進階功能
 discoverable credentials / resident keys 。
 
+```shell
+ssh-keygen -t ecdsa-sk -O resident
+```
+
 使用此類型的 key pair 時，會在 authenticator 上消耗一些儲存空間。但換來的好處是，
 使用者可以在新的機器上，把 key handle 從 authenticator 內抽出來。
 
