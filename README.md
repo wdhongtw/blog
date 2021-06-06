@@ -6,4 +6,9 @@ For more detail, see official documents.
 
 ## Setup Locally
 
-TBD
+Assume Node.js toolchain is already provided.
+
+```shell
+npm install # Install hexo and other dependencies
+npm run server # Launch a local server
+```
