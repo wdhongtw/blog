@@ -1,6 +1,8 @@
 ---
-layout: post
-title:  Kubernetes Audit Log 使用筆記
+title: Kubernetes Audit Log 使用筆記
+date: 2020-10-22 08:00:00
+categories: [notes]
+tags: [kubernetes, log, authentication]
 ---
 
 我在公司的工作環境中，有些業務需要部屬服務在 Kubernetes (下稱 K8s) 上。

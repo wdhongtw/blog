@@ -1,6 +1,8 @@
 ---
-layout: post
 title: GitHub 即日起支援使用 Security Key 進行 Git 操作
+date: 2021-05-11 08:00:00
+categories: [notes]
+tags: [github, fido, git]
 ---
 
 GitHub 開始支援使用 security key 進行 Git 操作啦！

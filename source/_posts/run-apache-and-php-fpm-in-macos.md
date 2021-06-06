@@ -1,6 +1,8 @@
 ---
-layout: post
-title:  "在 macOS 上架設 Apache 與 PHP-FPM"
+title: "在 macOS 上架設 Apache 與 PHP-FPM"
+date: 2019-11-09 08:00:00
+categories: [notes]
+tags: [github, fido, security]
 ---
 
 工作上因為一些特殊需求，需要在 macOS 環境下架設 Apache + PHP-FPM

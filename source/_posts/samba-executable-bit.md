@@ -1,6 +1,8 @@
 ---
-layout: post
-title:  "Samba 內檔案的異常執行權限"
+title: "Samba 內檔案的異常執行權限"
+date: 2018-04-17 08:00:00
+categories: [notes]
+tags: [samba, git]
 ---
 
 許多場合會利用 Samba 來建立給所有工作者共用的 SMB 工作目錄。
