@@ -103,3 +103,10 @@ theme: icarus
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: ''
+
+marked:
+  gfm: true
+  pedantic: false
+  breaks: false
+  autolink: false
+  descriptionLists: false
