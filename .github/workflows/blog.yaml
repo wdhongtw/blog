@@ -1,0 +1,32 @@
+name: build-and-deploy-blog
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+
+jobs:
+
+  blog:
+    runs-on: ubuntu-20.04
+    steps:
+
+      - name: Checkout
+        uses: actions/checkout@v2.3.4
+
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v2.1.5
+        with:
+          node-version: 12.x
+
+      - name: Install dependent packages
+        run: npm install
+
+      - name: Build blog posts
+        run: npm run build
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
