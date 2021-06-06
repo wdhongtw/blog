@@ -1,10 +1,12 @@
 ---
-layout: post
-title:  在 Ubuntu Server 上自動啟用 SSH Agent
+title: 在 Ubuntu Server 上自動啟用 SSH Agent
+date: 2020-04-04 08:00:00
+categories: [notes]
+tags: [ssh, systemd, authentication]
 ---
 
 當 我們的 SSH private key 有上 pass phrase 保護時，
-SSH agent 是個方便的好東西。因為它可以幫我們記住已經解鎖過的 private key。 
+SSH agent 是個方便的好東西。因為它可以幫我們記住已經解鎖過的 private key。
 
 可惜的是，Ubuntu server 18.04 的環境預設並不會幫你生一個 SSH agent 出來。
 

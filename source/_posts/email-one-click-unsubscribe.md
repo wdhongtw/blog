@@ -1,6 +1,8 @@
 ---
-layout: post
-title:  "關於電子報一鍵退訂"
+title: "關於電子報一鍵退訂"
+date: 2019-08-31 08:00:00
+categories: [notes]
+tags: [email, rfc]
 ---
 
 ## 前言

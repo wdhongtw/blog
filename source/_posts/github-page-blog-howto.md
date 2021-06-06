@@ -1,6 +1,8 @@
 ---
-layout: post
-title:  "利用 GitHub Page 經營 Blog"
+title: "利用 GitHub Page 經營 Blog"
+date: 2019-01-12 08:00:00
+categories: [notes]
+tags: [github, blog, jekyll]
 ---
 
 如果要用一句話來簡單說明 GitHub Page，那基本上就是

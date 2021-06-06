@@ -1,6 +1,8 @@
 ---
-layout: post
 title: 延長或縮短 GPG 金鑰的過期時間 (Expiration Time)
+date: 2021-05-06 08:00:00
+categories: [notes]
+tags: [gnupg, security]
 ---
 
 筆者在 2018 年的時候開了第一個真的有在長期使用的 GPG 金鑰。

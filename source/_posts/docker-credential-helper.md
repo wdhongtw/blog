@@ -1,6 +1,9 @@
 ---
-layout: post
 title: 保護存在檔案系統上的 Docker 登入密碼
+date: 2021-03-04 08:00:00
+categories: [notes]
+tags: [docker, secret, security]
+
 ---
 
 在企業內部的工作環境中，常會碰到需要存取 private registry 上的 image 的狀況。
