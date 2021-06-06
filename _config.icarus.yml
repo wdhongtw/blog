@@ -3,11 +3,11 @@ version: 4.0.0
 # Icarus theme variant, can be "default" or "cyberpunk"
 variant: default
 # Path or URL to the website's logo
-logo: /img/logo.svg
+logo: /img/logo.png
 # Page metadata configurations
 head:
     # URL or path to the website's icon
-    favicon: /img/favicon.svg
+    favicon: /img/favicon.ico
     # Web application manifests configuration
     # https://developer.mozilla.org/en-US/docs/Web/Manifest
     manifest:
@@ -124,7 +124,7 @@ footer:
             url: 'https://creativecommons.org/licenses/by/4.0/'
         Download on GitHub:
             icon: fab fa-github
-            url: 'https://github.com/ppoffice/hexo-theme-icarus'
+            url: 'https://github.com/wdhongtw/blog'
 # Article related configurations
 article:
     # Code highlight settings
@@ -173,27 +173,27 @@ widgets:
         position: left
         type: profile
         # Author name
-        author: Your name
+        author: Weida
         # Author title
-        author_title: Your title
+        author_title: Researcher & Developer
         # Author's current location
-        location: Your location
+        location: Taiwan
         # URL or path to the avatar image
-        avatar:
+        avatar: https://avatars.githubusercontent.com/u/16065489
         # Whether show the rounded avatar image
-        avatar_rounded: false
+        avatar_rounded: true
         # Email address for the Gravatar
         gravatar:
         # URL or path for the follow button
-        follow_link: 'https://github.com/ppoffice'
+        follow_link: 'https://github.com/wdhongtw'
         # Links to be shown on the bottom of the profile widget
         social_links:
             Github:
                 icon: fab fa-github
-                url: 'https://github.com/ppoffice'
+                url: 'https://github.com/wdhongtw'
             Facebook:
                 icon: fab fa-facebook
-                url: 'https://facebook.com'
+                url: 'https://www.facebook.com/wdhongtw'
     # Table of contents widget configurations
     -
         # Where should the widget be placed, left sidebar or right sidebar
