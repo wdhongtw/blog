@@ -8,7 +8,7 @@
 一個可以將用 Markdown 撰寫的文章，轉化成漂亮的靜態網頁內容的工具。常見的 SSG 有 Jekyll(Ruby), Hugo(Go),
 Hexo(JavaScript) 等。</p>
 <p>若將 SSG 工具與 GitHub / GitLab Pages 服務，搭配使用，
-<strong>寫作者只需要寫寫簡單的 Markdown 並　push commit，就能得到一個漂亮的 blog 或是文件網頁。</strong>
+<strong>寫作者只需要寫寫簡單的 Markdown 並 push commit，就能得到一個漂亮的 blog 或是文件網頁。</strong>
 筆者的個人 blog 及公司的工作筆記即是使用這類流程架設。</p>
 <p>整體流程大概如下圖所示:</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">               +   GitHub            +     github.io</span><br><span class="line">Local Project  |          Project    |               site</span><br><span class="line">               |   GitLab            |     gitlab.io</span><br><span class="line">               +                     +</span><br><span class="line"></span><br><span class="line">+----------+        +----------+  Build &amp;  +------+  User</span><br><span class="line">| Markup   |  Push  | Markup   |  Deploy   | Site |  Browse</span><br><span class="line">| config.. | +----&gt; | Config.. | +-------&gt; |      | +-------&gt;</span><br><span class="line">+----------+        +----------+           +------+</span><br></pre></td></tr></table></figure>
