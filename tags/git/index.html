@@ -1,59 +1,85 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>Tag: git - Bitisle</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="Bitisle"><meta name="msapplication-TileImage" content="/img/favicon.ico"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Bitisle"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="一倍工程師的小天地"><meta property="og:type" content="blog"><meta property="og:title" content="Bitisle"><meta property="og:url" content="https://blog.bitisle.net/"><meta property="og:site_name" content="Bitisle"><meta property="og:description" content="一倍工程師的小天地"><meta property="og:locale" content="en_US"><meta property="og:image" content="https://blog.bitisle.net/img/og_image.png"><meta property="article:author" content="Weida Hong"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="/img/og_image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://blog.bitisle.net"},"headline":"Bitisle","image":["https://blog.bitisle.net/img/og_image.png"],"author":{"@type":"Person","name":"Weida Hong"},"publisher":{"@type":"Organization","name":"Bitisle","logo":{"@type":"ImageObject","url":"https://blog.bitisle.net/img/logo.png"}},"description":"一倍工程師的小天地"}</script><link rel="alternate" href="/atom.xml" title="Bitisle" type="application/atom+xml"><link rel="icon" href="/img/favicon.ico"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css"><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script><!--!--><!--!--><meta name="generator" content="Hexo 5.4.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.png" alt="Bitisle" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a></div><div class="navbar-end"><a class="navbar-item search" title="Search" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><div class="card-content"><nav class="breadcrumb" aria-label="breadcrumbs"><ul><li><a href="/tags">Tags</a></li><li class="is-active"><a href="#" aria-current="page">git</a></li></ul></nav></div></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2021-05-11T00:00:00.000Z" title="5/11/2021, 12:00:00 AM">2021-05-11</time></span><span class="level-item"><a class="link-muted" href="/categories/notes/">notes</a></span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2021/05/11/github-ssh-fido-key/">GitHub 即日起支援使用 Security Key 進行 Git 操作</a></h1><div class="content"><p>GitHub 開始支援使用 security key 進行 Git 操作啦！</p>
-<p>這應該是各家科技巨頭當中，第一個支援 security key 進行 SSH login 的服務吧。<br>筆者昨天 5/10 才在公司內分享如何使用 security key 來做 SSH login，<br>沒想到 Yubico 和 GitHub 也剛好在昨天一起同步更新 blog 文章，通知大家這個新功能。<br>喜極而泣..</p>
+<p>這應該是各家科技巨頭當中，第一個支援 security key 進行 SSH login 的服務吧。
+筆者昨天 5/10 才在公司內分享如何使用 security key 來做 SSH login，
+沒想到 Yubico 和 GitHub 也剛好在昨天一起同步更新 blog 文章，通知大家這個新功能。
+喜極而泣..</p>
 <ul>
 <li><a target="_blank" rel="noopener" href="https://github.blog/2021-05-10-security-keys-supported-ssh-git-operations/">Security keys are now supported for SSH Git operations - The GitHub Blog</a></li>
 <li><a target="_blank" rel="noopener" href="https://www.yubico.com/blog/github-now-supports-ssh-security-keys/">GitHub now supports SSH security keys - Yubico</a></li>
 </ul>
-<p>以下簡單介紹如何使用這個新功能。<br>為了方便解說及避免誤會，後述內容均以正式名稱 authenticator 代稱 security key。</p>
+<p>以下簡單介紹如何使用這個新功能。
+為了方便解說及避免誤會，後述內容均以正式名稱 authenticator 代稱 security key。</p>
 <h2 id="如何使用"><a href="#如何使用" class="headerlink" title="如何使用"></a>如何使用</h2><p>首先當然要有一把 authenticator，如果還沒有，趕快去買一把囉。 :D</p>
 <p><strong>第一步</strong>，在 authenticator 內產生新的 key pair。</p>
-<p>產生 key pair 的流程和傳統放在檔案系統上的差不多，只是 key type 要指定代表 authenticator<br>的 type。</p>
+<p>產生 key pair 的流程和傳統放在檔案系統上的差不多，只是 key type 要指定代表 authenticator
+的 type。</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t ecdsa-sk</span><br></pre></td></tr></table></figure>
 
-<p>產生的過程，根據不同的 authenticator，會有要求按一下 且/或 輸入 PIN code 驗證身分。<br>此步驟會在 authenticator 內產生一組 key pair，並將 public key 寫到檔案系統上。<br>平常放 private key 的那個檔案還是會產生，不過這次裡面放的會是一個 key handle。</p>
+<p>產生的過程，根據不同的 authenticator，會有要求按一下 且/或 輸入 PIN code 驗證身分。
+此步驟會在 authenticator 內產生一組 key pair，並將 public key 寫到檔案系統上。
+平常放 private key 的那個檔案還是會產生，不過這次裡面放的會是一個 key handle。</p>
 <p><strong>第二步</strong>，透過 GitHub 的 web UI 上傳 public key</p>
 <p>上傳完之後，沒意外就可以順利使用了，可以試著 clone 一些 project</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ git clone git@github.com:github/secure_headers.git</span><br><span class="line">Cloning into &#x27;secure_headers&#x27;...</span><br><span class="line">Confirm user presence for key ECDSA-SK SHA256:........</span><br><span class="line">User presence confirmed</span><br></pre></td></tr></table></figure>
 
-<p>若確認 OK，之後的 Git 操作都可以透過隨身攜帶的 authenticator 保護，<br>只要按一下 authenticator 即可。</p>
-<p>設定完之後，<strong>若沒有拿出 authenticator，就不能進行 push / pull 操作。</strong><br>只要確保 authenticator 還在身上，就可以安心睡大覺。<br>(再也不用擔心 private key 放在公司電腦上會被摸走了！)</p>
+<p>若確認 OK，之後的 Git 操作都可以透過隨身攜帶的 authenticator 保護，
+只要按一下 authenticator 即可。</p>
+<p>設定完之後，<strong>若沒有拿出 authenticator，就不能進行 push / pull 操作。</strong>
+只要確保 authenticator 還在身上，就可以安心睡大覺。
+(再也不用擔心 private key 放在公司電腦上會被摸走了！)</p>
 <h2 id="進階使用方式"><a href="#進階使用方式" class="headerlink" title="進階使用方式"></a>進階使用方式</h2><p>FIDO 2 authenticator 博大精深，除了上述的基本使用流程外，還有些細節可以設定。</p>
 <p>以下分別介紹三個進階使用技巧：</p>
 <h3 id="要求身分驗證-User-Verification-才能使用-Authenticator"><a href="#要求身分驗證-User-Verification-才能使用-Authenticator" class="headerlink" title="要求身分驗證 (User Verification) 才能使用 Authenticator"></a>要求身分驗證 (User Verification) 才能使用 Authenticator</h3><p>根據每個人平常保管鑰匙習慣的差異，可能有人會擔心 authenticator 真的被摸走。</p>
-<p>但 authenticator 也有支援一定要驗甚身分 (e.g. PIN code or 指紋辨識) 後才能<br>使用內部的 key pair 的功能。</p>
+<p>但 authenticator 也有支援一定要驗甚身分 (e.g. PIN code or 指紋辨識) 後才能
+使用內部的 key pair 的功能。</p>
 <p>要如何使用呢？ 只要在產生 key pair 的過程中多下一個 flag 即可。</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t ecdsa-sk -O verify-required</span><br></pre></td></tr></table></figure>
 
-<p>若之後要使用由此方式產生的 key pair，除了手指按一下 authenticator 之外，還會要求<br>使用者輸入 PIN code 才能順利完成操作。如此即使 authenticator 被偷走了，也不用太緊張。</p>
-<h3 id="全自動使用-Authenticator-避免-User-Presence-Check"><a href="#全自動使用-Authenticator-避免-User-Presence-Check" class="headerlink" title="全自動使用 Authenticator (避免 User Presence Check)"></a>全自動使用 Authenticator (避免 User Presence Check)</h3><p>若把 authenticator 插上電腦後，想要隨時隨地都進行 push / pull，<br>但不要每次都手按一下 authenticator。這種自動化的使用情境 OpenSSH 其實也是有支援的。</p>
+<p>若之後要使用由此方式產生的 key pair，除了手指按一下 authenticator 之外，還會要求
+使用者輸入 PIN code 才能順利完成操作。如此即使 authenticator 被偷走了，也不用太緊張。</p>
+<h3 id="全自動使用-Authenticator-避免-User-Presence-Check"><a href="#全自動使用-Authenticator-避免-User-Presence-Check" class="headerlink" title="全自動使用 Authenticator (避免 User Presence Check)"></a>全自動使用 Authenticator (避免 User Presence Check)</h3><p>若把 authenticator 插上電腦後，想要隨時隨地都進行 push / pull，
+但不要每次都手按一下 authenticator。這種自動化的使用情境 OpenSSH 其實也是有支援的。</p>
 <p>使用的方式也是在產生 key pair 時多帶一個參數。</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t ecdsa-sk -O no-touch-required</span><br></pre></td></tr></table></figure>
 
-<p>同時在將 public key 部屬到目標機器上時，在 public key 該行前面多下 <code>no-touch-required</code><br>即可。 (詳情請見 <code>ssh-keygen(1)</code> 及 <code>sshd(8)</code>)</p>
+<p>同時在將 public key 部屬到目標機器上時，在 public key 該行前面多下 <code>no-touch-required</code>
+即可。 (詳情請見 <code>ssh-keygen(1)</code> 及 <code>sshd(8)</code>)</p>
 <p>以此方始產生的 key pair 在使用時就不需要每次都手按一下，可以全自動使用。</p>
 <p>不過，雖然 OpenSSH 有支援此種使用情境，<strong>但目前 GitHub 禁止這種使用方式</strong>。</p>
 <p>節錄自上述 blog 文章</p>
 <blockquote>
-<p>While we understand the appeal of removing the need for the taps,<br>we determined our current approach to require presence and intention<br>is the best balance between usability and security.</p>
+<p>While we understand the appeal of removing the need for the taps,
+we determined our current approach to require presence and intention
+is the best balance between usability and security.</p>
 </blockquote>
 <p>所以在 GitHub 上，若想要全自動操作，只能回去用一般的 SSH key 或 API token 囉。</p>
 <h3 id="避免手動複製-Key-Handle"><a href="#避免手動複製-Key-Handle" class="headerlink" title="避免手動複製 Key Handle"></a>避免手動複製 Key Handle</h3><p>前面有提到，原先檔案系統上用來放 private key 的檔案會變成拿來擺放 key handle。</p>
-<p>這意味著，當我們想在新的機器上透過 SSH 進行 Git 操作時，除了拿出 authenticator 之外，<br>也需要把原先的 key handle 檔案複製到新的機器上。<br>且若 key handle 檔案掉了，該組 key pair 就不能使用了。</p>
-<p>若要避免此問題，就要用上 authenticator 的另一個進階功能<br>discoverable credentials / resident keys 。</p>
+<p>這意味著，當我們想在新的機器上透過 SSH 進行 Git 操作時，除了拿出 authenticator 之外，
+也需要把原先的 key handle 檔案複製到新的機器上。
+且若 key handle 檔案掉了，該組 key pair 就不能使用了。</p>
+<p>若要避免此問題，就要用上 authenticator 的另一個進階功能
+discoverable credentials / resident keys 。</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t ecdsa-sk -O resident</span><br></pre></td></tr></table></figure>
 
-<p>使用此類型的 key pair 時，會在 authenticator 上消耗一些儲存空間。但換來的好處是，<br>使用者可以在新的機器上，把 key handle 從 authenticator 內抽出來。</p>
+<p>使用此類型的 key pair 時，會在 authenticator 上消耗一些儲存空間。但換來的好處是，
+使用者可以在新的機器上，把 key handle 從 authenticator 內抽出來。</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -K # extract discoverable credentials</span><br></pre></td></tr></table></figure>
 
 <p>如此就不用手動複製擺放 key handle 的 private key 檔案了。</p>
-<p>但要注意的是此類型 key pair 會消耗 authenticator 的空間。<br>每把 authenticator 可以放多少 key pair 要再自行查閱官方文件。</p>
+<p>但要注意的是此類型 key pair 會消耗 authenticator 的空間。
+每把 authenticator 可以放多少 key pair 要再自行查閱官方文件。</p>
 <h2 id="結語"><a href="#結語" class="headerlink" title="結語"></a>結語</h2><p>以上介紹了基本使用情境及三種可能的進階使用方式。</p>
-<p>筆者在 2014 年第一次注意到 FIDO (U2F) 標準，當時就在想像沒有密碼的世界。<br>如今，藉由 FIDO 2 security key 的普及，當初所想的美好願景似乎在慢慢地實現中..</p>
+<p>筆者在 2014 年第一次注意到 FIDO (U2F) 標準，當時就在想像沒有密碼的世界。
+如今，藉由 FIDO 2 security key 的普及，當初所想的美好願景似乎在慢慢地實現中..</p>
 <p>希望未來能看到 security key 運用在更多場景上！</p>
 </div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2018-04-17T00:00:00.000Z" title="4/17/2018, 12:00:00 AM">2018-04-17</time></span><span class="level-item"><a class="link-muted" href="/categories/notes/">notes</a></span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2018/04/17/samba-executable-bit/">Samba 內檔案的異常執行權限</a></h1><div class="content"><p>許多場合會利用 Samba 來建立給所有工作者共用的 SMB 工作目錄。</p>
-<p>SMB 是 Microsoft 針對 Windows 體系設計的 protocol，但因為種種因素，<br>目前 Mac 及各 Linux 桌面發行版也都有不錯的 SMB client 支援。<br>已 SMB 提供共用的工作目錄，似乎已成為最常見的協同工作方法。</p>
-<p>在另一方面，Samba 是一套基於 Unix 環境開發的開源 SMB server 實作。<br>但因為 Windows 與 Unix 在檔案系統上設計的根本性差別，儘管 Samba 歷史悠久且功能齊全，<br>仍然會有一些先天性的問題。</p>
+<p>SMB 是 Microsoft 針對 Windows 體系設計的 protocol，但因為種種因素，
+目前 Mac 及各 Linux 桌面發行版也都有不錯的 SMB client 支援。
+已 SMB 提供共用的工作目錄，似乎已成為最常見的協同工作方法。</p>
+<p>在另一方面，Samba 是一套基於 Unix 環境開發的開源 SMB server 實作。
+但因為 Windows 與 Unix 在檔案系統上設計的根本性差別，儘管 Samba 歷史悠久且功能齊全，
+仍然會有一些先天性的問題。</p>
 <p>為了解釋問題到底從何而來，以下要簡單介紹一下 Windows 與 Unix 的檔案相關特性。</p>
 <h2 id="Windows-File-Attribute-與-Unix-File-Mode"><a href="#Windows-File-Attribute-與-Unix-File-Mode" class="headerlink" title="Windows File Attribute 與 Unix File Mode"></a>Windows File Attribute 與 Unix File Mode</h2><p>傳統上，Windows 系統下的每個檔案都會需要有以下四個屬性:</p>
 <ul>
@@ -62,34 +88,54 @@
 <li>System: 紀錄此檔案是否爲系統檔案。</li>
 <li>Read-only: 紀錄此檔案是否只能讀取。</li>
 </ul>
-<p>Unix 作業系統採取了與 Windows 不同的設計。<br>在 Unix 內，每個檔案紀錄針對檔案擁有者、檔案擁有群組及其他人分別紀錄三組權限</p>
+<p>Unix 作業系統採取了與 Windows 不同的設計。
+在 Unix 內，每個檔案紀錄針對檔案擁有者、檔案擁有群組及其他人分別紀錄三組權限</p>
 <ul>
 <li>Readable: 檔案是否可讀取</li>
 <li>Writable： 檔案是否可寫入</li>
 <li>Executable： 檔案是否可執行</li>
 </ul>
-<p>現在我們可以知道，Windows 與 Unix 對於檔案應該紀錄的特性/模式其實有不一樣的要求。<br>許多和檔案系統相關的功能也會用不同的方式來達成。</p>
-<p>比方說，有關檔案 <strong>是否隱藏</strong> 這件事情，在 Windows 上會有一個獨立的 attribute 來處理。<br>而在 Unix 上，則是依據 “<code>.</code> 開頭的檔案應被隱藏” 的常規。除了檔名看起來有點不一樣之外，<br>隱藏檔案和一般檔案在檔案系統裡沒有差別。</p>
-<p>另外我們也可以注意到Windows 和 Unix 對於 <strong>可執行</strong> 這個概念的處理方式也不同。<br>在 Unix 的世界中，每個檔案的 mode 中會紀錄這個檔案是否可執行。而在 Windows 中，<br>檔案並沒有是否可執行的概念，而是讓作業系統維護一個表單，裡面紀錄各種副檔名的檔案應該如何開啟或執行。</p>
-<h2 id="Samba-的設計與產生的問題"><a href="#Samba-的設計與產生的問題" class="headerlink" title="Samba 的設計與產生的問題"></a>Samba 的設計與產生的問題</h2><p>Samba 是個 SMB 的 server 實作，作為在 Unix 環境上跑的服務，但同時也要支援 Windows 的<br>file attribute，亦即前述提到的 Archive、Read-only 等。這些 attribute 是必得以某種<br>方式存在 Samba server 上。在這裏 Samba 的實作非常有趣：</p>
+<p>現在我們可以知道，Windows 與 Unix 對於檔案應該紀錄的特性/模式其實有不一樣的要求。
+許多和檔案系統相關的功能也會用不同的方式來達成。</p>
+<p>比方說，有關檔案 <strong>是否隱藏</strong> 這件事情，在 Windows 上會有一個獨立的 attribute 來處理。
+而在 Unix 上，則是依據 “<code>.</code> 開頭的檔案應被隱藏” 的常規。除了檔名看起來有點不一樣之外，
+隱藏檔案和一般檔案在檔案系統裡沒有差別。</p>
+<p>另外我們也可以注意到Windows 和 Unix 對於 <strong>可執行</strong> 這個概念的處理方式也不同。
+在 Unix 的世界中，每個檔案的 mode 中會紀錄這個檔案是否可執行。而在 Windows 中，
+檔案並沒有是否可執行的概念，而是讓作業系統維護一個表單，裡面紀錄各種副檔名的檔案應該如何開啟或執行。</p>
+<h2 id="Samba-的設計與產生的問題"><a href="#Samba-的設計與產生的問題" class="headerlink" title="Samba 的設計與產生的問題"></a>Samba 的設計與產生的問題</h2><p>Samba 是個 SMB 的 server 實作，作為在 Unix 環境上跑的服務，但同時也要支援 Windows 的
+file attribute，亦即前述提到的 Archive、Read-only 等。這些 attribute 是必得以某種
+方式存在 Samba server 上。在這裏 Samba 的實作非常有趣：</p>
 <blockquote>
 <p>利用 Unix 環境中 Windows 用不到的 executable bit 來存放 Windows 需要的 file attribute。</p>
 </blockquote>
-<p>具體來說，Archive、System 與 Hidden 屬性會分別存在擁有者、擁有群組與其他人的 file mode<br>的 executable bit 當中。而 Read-only 則是影響檔案擁有者的寫入權限是開啟。<br>簡單圖示如下:</p>
+<p>具體來說，Archive、System 與 Hidden 屬性會分別存在擁有者、擁有群組與其他人的 file mode
+的 executable bit 當中。而 Read-only 則是影響檔案擁有者的寫入權限是開啟。
+簡單圖示如下:</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">    Owner    Group    Others</span><br><span class="line">  +----------------------------+</span><br><span class="line">  | r  w  x  r  w  x  r  w  x  |</span><br><span class="line">  +-^--^--^--------^--------^--+</span><br><span class="line">    |  |  |        |        |</span><br><span class="line">ReadOnly  Archive  System   Hidden</span><br></pre></td></tr></table></figure>
 
-<p><em>但此做法舉其實會導致其他問題</em>。這會其他在 Mac 或 Unix 環境下掛載 SMB share 的使用者，<br>會看到檔案有時莫名的變成可執行，或原本可執行的 script 突然變成不可執行。</p>
-<p>於是乎，在 Window 與 Linux 混用的工作環境中，RD 的 terminal 下常會看到一片花花綠綠的<br>source code 資料夾。(一般 shell 都會預設開 <code>ls</code> 的 colorize 選項)</p>
+<p><em>但此做法舉其實會導致其他問題</em>。這會其他在 Mac 或 Unix 環境下掛載 SMB share 的使用者，
+會看到檔案有時莫名的變成可執行，或原本可執行的 script 突然變成不可執行。</p>
+<p>於是乎，在 Window 與 Linux 混用的工作環境中，RD 的 terminal 下常會看到一片花花綠綠的
+source code 資料夾。(一般 shell 都會預設開 <code>ls</code> 的 colorize 選項)</p>
 <h2 id="Executable-Bit-異常的解決方式"><a href="#Executable-Bit-異常的解決方式" class="headerlink" title="Executable Bit 異常的解決方式"></a>Executable Bit 異常的解決方式</h2><p>若要避免 Samba 的這類行為，可以在 <code>smb.conf</code> 中加入以下設定</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">map archive = no</span><br><span class="line">map system = no</span><br><span class="line">map hidden = no</span><br><span class="line">map read only = no</span><br></pre></td></tr></table></figure>
 
 <p>如此 Samba 就不會嘗試利用 Unix 的 file mode 來存放這些 attribute。</p>
-<p>又或是如果想支援 Windows 的 attribute，但又不想影響 Unix 下的執行權限，可以將這些<br>attribute 寫進 extended attributes 裡。這需要使用以下設定</p>
+<p>又或是如果想支援 Windows 的 attribute，但又不想影響 Unix 下的執行權限，可以將這些
+attribute 寫進 extended attributes 裡。這需要使用以下設定</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">store dos attributes = yes</span><br></pre></td></tr></table></figure>
 
-<h2 id="碎碎唸"><a href="#碎碎唸" class="headerlink" title="碎碎唸"></a>碎碎唸</h2><p>作為一個軟體工程師，常聽到 <strong>Every detail matters</strong> 或其他類似精神的標語。<br>魔鬼蔵在細節裏，確保每個細節的正確(或至少看起來正確)是每個工程師都應該追求的境界。<br>而這個追求細節的精神，必須從乾淨的工作環境開始做起。</p>
-<p>為什麼會寫出這邊文章？其實就只看到公司的 VCS 內各種怪異的檔案權限，<br>感到困惑而已。清楚的變數命名、符合直覺的 API 設計有助於開發人員理解專案。正確的檔案權限<br>其實也是如此。設定檔應該是 <code>rw-</code>，script 應該是 <code>r-x</code>，不違背直覺的專案狀態才不會<br>阻礙工程師工作。</p>
-<p>當然，一切的根本原因還是在於 Samba 的預設設定會把 Archive attribute map 到<br>file mode 裡面。在 Window 環境工作的工程師一般都是在無意的情況下把 file mode 的異動<br>寫道 VCS 裡面。這時只能抱怨爲何當年 Samba 的作者要做出這種設計了。</p>
+<h2 id="碎碎唸"><a href="#碎碎唸" class="headerlink" title="碎碎唸"></a>碎碎唸</h2><p>作為一個軟體工程師，常聽到 <strong>Every detail matters</strong> 或其他類似精神的標語。
+魔鬼蔵在細節裏，確保每個細節的正確(或至少看起來正確)是每個工程師都應該追求的境界。
+而這個追求細節的精神，必須從乾淨的工作環境開始做起。</p>
+<p>為什麼會寫出這邊文章？其實就只看到公司的 VCS 內各種怪異的檔案權限，
+感到困惑而已。清楚的變數命名、符合直覺的 API 設計有助於開發人員理解專案。正確的檔案權限
+其實也是如此。設定檔應該是 <code>rw-</code>，script 應該是 <code>r-x</code>，不違背直覺的專案狀態才不會
+阻礙工程師工作。</p>
+<p>當然，一切的根本原因還是在於 Samba 的預設設定會把 Archive attribute map 到
+file mode 裡面。在 Window 環境工作的工程師一般都是在無意的情況下把 file mode 的異動
+寫道 VCS 裡面。這時只能抱怨爲何當年 Samba 的作者要做出這種設計了。</p>
 <h2 id="相關連結"><a href="#相關連結" class="headerlink" title="相關連結"></a>相關連結</h2><ul>
 <li><a target="_blank" rel="noopener" href="https://unix.stackexchange.com/questions/103415/why-are-files-in-a-smbfs-mounted-share-created-with-executable-bit-set">Why are files in a smbfs mounted share created with executable bit set?</a></li>
 <li><a target="_blank" rel="noopener" href="http://www.oreilly.com/openbook/samba/book/ch05_03.html">File Permissions and Attributes on MS-DOS and Unix</a></li>
