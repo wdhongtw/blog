@@ -18,8 +18,8 @@
   
   <entry>
     <title>GitHub Pages 與 GitLab Pages 架設 Blog</title>
-    <link href="https://blog.bitisle.net/2021/06/06/github-pages-gitlab-pages/"/>
-    <id>https://blog.bitisle.net/2021/06/06/github-pages-gitlab-pages/</id>
+    <link href="https://blog.bitisle.net/2021/06/06/github-pages-gitlab-pages.html"/>
+    <id>https://blog.bitisle.net/2021/06/06/github-pages-gitlab-pages.html</id>
     <published>2021-06-06T13:00:00.000Z</published>
     <updated>2021-06-06T13:00:00.000Z</updated>
     
@@ -47,8 +47,8 @@
   
   <entry>
     <title>GitHub 即日起支援使用 Security Key 進行 Git 操作</title>
-    <link href="https://blog.bitisle.net/2021/05/11/github-ssh-fido-key/"/>
-    <id>https://blog.bitisle.net/2021/05/11/github-ssh-fido-key/</id>
+    <link href="https://blog.bitisle.net/2021/05/11/github-ssh-fido-key.html"/>
+    <id>https://blog.bitisle.net/2021/05/11/github-ssh-fido-key.html</id>
     <published>2021-05-11T00:00:00.000Z</published>
     <updated>2021-05-11T00:00:00.000Z</updated>
     
@@ -77,8 +77,8 @@
   
   <entry>
     <title>延長或縮短 GPG 金鑰的過期時間 (Expiration Time)</title>
-    <link href="https://blog.bitisle.net/2021/05/06/gpg-key-extend-expiration-date/"/>
-    <id>https://blog.bitisle.net/2021/05/06/gpg-key-extend-expiration-date/</id>
+    <link href="https://blog.bitisle.net/2021/05/06/gpg-key-extend-expiration-date.html"/>
+    <id>https://blog.bitisle.net/2021/05/06/gpg-key-extend-expiration-date.html</id>
     <published>2021-05-06T00:00:00.000Z</published>
     <updated>2021-05-06T00:00:00.000Z</updated>
     
@@ -106,8 +106,8 @@
   
   <entry>
     <title>保護存在檔案系統上的 Docker 登入密碼</title>
-    <link href="https://blog.bitisle.net/2021/03/04/docker-credential-helper/"/>
-    <id>https://blog.bitisle.net/2021/03/04/docker-credential-helper/</id>
+    <link href="https://blog.bitisle.net/2021/03/04/docker-credential-helper.html"/>
+    <id>https://blog.bitisle.net/2021/03/04/docker-credential-helper.html</id>
     <published>2021-03-04T00:00:00.000Z</published>
     <updated>2021-03-04T00:00:00.000Z</updated>
     
@@ -136,8 +136,8 @@
   
   <entry>
     <title>Kubernetes Audit Log 使用筆記</title>
-    <link href="https://blog.bitisle.net/2020/10/22/kubernetes-auditing/"/>
-    <id>https://blog.bitisle.net/2020/10/22/kubernetes-auditing/</id>
+    <link href="https://blog.bitisle.net/2020/10/22/kubernetes-auditing.html"/>
+    <id>https://blog.bitisle.net/2020/10/22/kubernetes-auditing.html</id>
     <published>2020-10-22T00:00:00.000Z</published>
     <updated>2020-10-22T00:00:00.000Z</updated>
     
@@ -166,8 +166,8 @@
   
   <entry>
     <title>在 Ubuntu Server 上自動啟用 SSH Agent</title>
-    <link href="https://blog.bitisle.net/2020/04/04/run-ssh-agent-ubuntu-server/"/>
-    <id>https://blog.bitisle.net/2020/04/04/run-ssh-agent-ubuntu-server/</id>
+    <link href="https://blog.bitisle.net/2020/04/04/run-ssh-agent-ubuntu-server.html"/>
+    <id>https://blog.bitisle.net/2020/04/04/run-ssh-agent-ubuntu-server.html</id>
     <published>2020-04-04T00:00:00.000Z</published>
     <updated>2020-04-04T00:00:00.000Z</updated>
     
@@ -196,8 +196,8 @@ SSH agent 是個方便的好東西。因為它可以幫我們記住已經解鎖�
   
   <entry>
     <title>在 macOS 上架設 Apache 與 PHP-FPM</title>
-    <link href="https://blog.bitisle.net/2019/11/09/run-apache-and-php-fpm-in-macos/"/>
-    <id>https://blog.bitisle.net/2019/11/09/run-apache-and-php-fpm-in-macos/</id>
+    <link href="https://blog.bitisle.net/2019/11/09/run-apache-and-php-fpm-in-macos.html"/>
+    <id>https://blog.bitisle.net/2019/11/09/run-apache-and-php-fpm-in-macos.html</id>
     <published>2019-11-09T00:00:00.000Z</published>
     <updated>2019-11-09T00:00:00.000Z</updated>
     
@@ -225,8 +225,8 @@ SSH agent 是個方便的好東西。因為它可以幫我們記住已經解鎖�
   
   <entry>
     <title>關於電子報一鍵退訂</title>
-    <link href="https://blog.bitisle.net/2019/08/31/email-one-click-unsubscribe/"/>
-    <id>https://blog.bitisle.net/2019/08/31/email-one-click-unsubscribe/</id>
+    <link href="https://blog.bitisle.net/2019/08/31/email-one-click-unsubscribe.html"/>
+    <id>https://blog.bitisle.net/2019/08/31/email-one-click-unsubscribe.html</id>
     <published>2019-08-31T00:00:00.000Z</published>
     <updated>2019-08-31T00:00:00.000Z</updated>
     
@@ -253,8 +253,8 @@ SSH agent 是個方便的好東西。因為它可以幫我們記住已經解鎖�
   
   <entry>
     <title>利用 GitHub Page 經營 Blog</title>
-    <link href="https://blog.bitisle.net/2019/01/12/github-page-blog-howto/"/>
-    <id>https://blog.bitisle.net/2019/01/12/github-page-blog-howto/</id>
+    <link href="https://blog.bitisle.net/2019/01/12/github-page-blog-howto.html"/>
+    <id>https://blog.bitisle.net/2019/01/12/github-page-blog-howto.html</id>
     <published>2019-01-12T00:00:00.000Z</published>
     <updated>2019-01-12T00:00:00.000Z</updated>
     
@@ -285,8 +285,8 @@ SSH agent 是個方便的好東西。因為它可以幫我們記住已經解鎖�
   
   <entry>
     <title>Samba 內檔案的異常執行權限</title>
-    <link href="https://blog.bitisle.net/2018/04/17/samba-executable-bit/"/>
-    <id>https://blog.bitisle.net/2018/04/17/samba-executable-bit/</id>
+    <link href="https://blog.bitisle.net/2018/04/17/samba-executable-bit.html"/>
+    <id>https://blog.bitisle.net/2018/04/17/samba-executable-bit.html</id>
     <published>2018-04-17T00:00:00.000Z</published>
     <updated>2018-04-17T00:00:00.000Z</updated>
     
