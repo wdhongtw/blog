@@ -16,13 +16,6 @@
   </url>
   
   <url>
-    <loc>https://blog.bitisle.net/2021/06/06/github-pages-gitlab-pages.html</loc>
-    
-    <lastmod>2021-06-06</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://blog.bitisle.net/2021/05/06/gpg-key-extend-expiration-date.html</loc>
     
     <lastmod>2021-05-06</lastmod>
@@ -44,6 +37,13 @@
   </url>
   
   <url>
+    <loc>https://blog.bitisle.net/2021/05/11/github-ssh-fido-key.html</loc>
+    
+    <lastmod>2021-05-11</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://blog.bitisle.net/2020/04/04/run-ssh-agent-ubuntu-server.html</loc>
     
     <lastmod>2020-04-04</lastmod>
@@ -58,16 +58,16 @@
   </url>
   
   <url>
-    <loc>https://blog.bitisle.net/2019/01/12/github-page-blog-howto.html</loc>
+    <loc>https://blog.bitisle.net/2021/06/06/github-pages-gitlab-pages.html</loc>
     
-    <lastmod>2019-01-12</lastmod>
+    <lastmod>2021-06-06</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.bitisle.net/2021/05/11/github-ssh-fido-key.html</loc>
+    <loc>https://blog.bitisle.net/2019/01/12/github-page-blog-howto.html</loc>
     
-    <lastmod>2021-05-11</lastmod>
+    <lastmod>2019-01-12</lastmod>
     
   </url>
   
@@ -123,27 +123,6 @@
   </url>
   
   <url>
-    <loc>https://blog.bitisle.net/tags/github/</loc>
-    <lastmod>2021-06-08</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.bitisle.net/tags/gitlab/</loc>
-    <lastmod>2021-06-08</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.bitisle.net/tags/blog/</loc>
-    <lastmod>2021-06-08</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.bitisle.net/tags/gnupg/</loc>
     <lastmod>2021-06-08</lastmod>
     <changefreq>daily</changefreq>
@@ -172,7 +151,21 @@
   </url>
   
   <url>
+    <loc>https://blog.bitisle.net/tags/github/</loc>
+    <lastmod>2021-06-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.bitisle.net/tags/fido/</loc>
+    <lastmod>2021-06-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.bitisle.net/tags/git/</loc>
     <lastmod>2021-06-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -200,7 +193,14 @@
   </url>
   
   <url>
-    <loc>https://blog.bitisle.net/tags/git/</loc>
+    <loc>https://blog.bitisle.net/tags/gitlab/</loc>
+    <lastmod>2021-06-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.bitisle.net/tags/blog/</loc>
     <lastmod>2021-06-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
