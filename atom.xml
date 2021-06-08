@@ -39,9 +39,9 @@
     
     <category term="github" scheme="https://blog.bitisle.net/tags/github/"/>
     
-    <category term="blog" scheme="https://blog.bitisle.net/tags/blog/"/>
-    
     <category term="gitlab" scheme="https://blog.bitisle.net/tags/gitlab/"/>
+    
+    <category term="blog" scheme="https://blog.bitisle.net/tags/blog/"/>
     
   </entry>
   
@@ -305,9 +305,9 @@ SSH agent 是個方便的好東西。因為它可以幫我們記住已經解鎖�
     <category term="notes" scheme="https://blog.bitisle.net/categories/notes/"/>
     
     
-    <category term="git" scheme="https://blog.bitisle.net/tags/git/"/>
-    
     <category term="samba" scheme="https://blog.bitisle.net/tags/samba/"/>
+    
+    <category term="git" scheme="https://blog.bitisle.net/tags/git/"/>
     
   </entry>
   
