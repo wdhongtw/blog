@@ -112,6 +112,9 @@ navbar:
         About: /about
     # Links to be shown on the right of the navigation bar
     links:
+        RSS:
+            icon: fas fa-rss
+            url: /atom.xml
 # Page footer configurations
 footer:
     # Links to be shown on the right of the footer section
