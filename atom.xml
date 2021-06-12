@@ -6,7 +6,7 @@
   <link href="https://blog.bitisle.net/atom.xml" rel="self"/>
   
   <link href="https://blog.bitisle.net/"/>
-  <updated>2021-06-06T13:00:00.000Z</updated>
+  <updated>2021-06-12T08:35:00.000Z</updated>
   <id>https://blog.bitisle.net/</id>
   
   <author>
@@ -15,6 +15,38 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>VS Code 新功能: Remote Repositories</title>
+    <link href="https://blog.bitisle.net/2021/06/12/vscode-feature-remote-repositories.html"/>
+    <id>https://blog.bitisle.net/2021/06/12/vscode-feature-remote-repositories.html</id>
+    <published>2021-06-12T08:35:00.000Z</published>
+    <updated>2021-06-12T08:35:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>VS Code 在 <a href="https://code.visualstudio.com/updates/v1_57">1.57</a> 版中，Remote Development 系列 extension 加入了新成員:<a href="https://marketplace.visualstudio.com/items?itemName=GitHub.remotehub">Remote Repositories</a>。</p><p>有了這個 extension 之後，如果遇上臨時想看的 project，就可以直接在 VS Code中叫出來看，不需要事先 clone 至某個 local 資料夾。</p><p>不過.. 因為這個 extension 實際上是建一個<a href="https://github.com/microsoft/vscode/wiki/Virtual-Workspaces">Virtual Workspaces</a>並把 code 放在裡面閱覽，所以用 Remote Repositories 開出來的 workspace 功能非常受限。諸如 Debug, Terminal 及大部分的 extension 基本上都不能用。但話雖如此，當看 code 看一看想要開始進行比較深入的修改及除錯時，其實也是有提供轉換成一般 workspace 的功能。 使用上非常方便！</p><p>可惜的是，目前此 extension 支援的 remote repository 種類只有 GitHub。且如同其他 Remote Development Series，這個 extension 並非 open source project：</p><ul><li><a href="https://code.visualstudio.com/docs/remote/faq#_why-arent-the-remote-development-extensions-or-their-components-open-source">Visual Studio Code Remote Development Frequently Asked Questions</a></li><li><a href="https://github.com/VSCodium/vscodium/issues/196">Cannot use Remote Development extension pack · Issue #196 · VSCodium/vscodium</a></li></ul><p>未來會不會支援 GitHub 以外的 Git repositories，甚至其他種類的 VCS，只能看微軟爸爸的眼色了。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;VS Code 在 &lt;a href=&quot;https://code.visualstudio.com/updates/v1_57&quot;&gt;1.57&lt;/a&gt; 版中，
+Remote Development 系列 extension 加入了新成員:
+&lt;a href=&quot;https://mar</summary>
+      
+    
+    
+    
+    <category term="news" scheme="https://blog.bitisle.net/categories/news/"/>
+    
+    
+    <category term="github" scheme="https://blog.bitisle.net/tags/github/"/>
+    
+    <category term="ide" scheme="https://blog.bitisle.net/tags/ide/"/>
+    
+    <category term="vscode" scheme="https://blog.bitisle.net/tags/vscode/"/>
+    
+    <category term="development" scheme="https://blog.bitisle.net/tags/development/"/>
+    
+  </entry>
   
   <entry>
     <title>GitHub Pages 與 GitLab Pages 架設 Blog</title>
@@ -39,9 +71,9 @@
     
     <category term="github" scheme="https://blog.bitisle.net/tags/github/"/>
     
-    <category term="gitlab" scheme="https://blog.bitisle.net/tags/gitlab/"/>
-    
     <category term="blog" scheme="https://blog.bitisle.net/tags/blog/"/>
+    
+    <category term="gitlab" scheme="https://blog.bitisle.net/tags/gitlab/"/>
     
   </entry>
   
