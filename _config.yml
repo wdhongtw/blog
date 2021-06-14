@@ -110,3 +110,10 @@ marked:
   breaks: false
   autolink: false
   descriptionLists: false
+
+nofollow:
+  enable: true
+  field: site
+  exclude:
+    - 'github.com'
+    - 'www.facebook.com'
