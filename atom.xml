@@ -54,7 +54,7 @@
     <published>2021-06-17T03:10:00.000Z</published>
     <updated>2021-06-17T03:10:00.000Z</updated>
     
-    <content type="html"><![CDATA[<p>今天 GitLab 在自家 blog 上公告 revoke 簽署 package 的 GPG key。</p><blockquote><p>We recently became aware of an instance where this key and other tokensused to distribute official GitLab Runner packages and binaries were notsecured according to GitLab’s security policies.</p></blockquote><blockquote><p>We have not found any evidence of unauthorized modification of the packagesor access to the services storing them.</p></blockquote><p>並不是因為 key 被 compromise，僅是因為 key 不符合公司的安全規範，所以就進行了一次 rekey。</p><p>GPG key rotate/rekey 並不憑證一樣，只要重簽一張就好 (因為信賴建立在已知的第三方 CA 上)。GPG key 需要透過可信管道重新宣告 fingerprint 並請大家 import 新的 key。這個轉換的成品相較換憑證應是高非常多且難以量化的。</p><p>沒想到居然僅為了不合安全規範就進行 rekey，不愧是國際一線的軟體公司！</p><p>See: <a href="https://about.gitlab.com/blog/2021/06/16/gpg-key-used-to-sign-gitlab-runner-packages-rotated/">The GPG key used to sign GitLab Runner packages has been rotated | GitLab</a></p>]]></content>
+    <content type="html"><![CDATA[<p>今天 GitLab 在自家 blog 上公告 revoke 簽署 package 的 GPG key。</p><blockquote><p>We recently became aware of an instance where this key and other tokensused to distribute official GitLab Runner packages and binaries were notsecured according to GitLab’s security policies.</p></blockquote><blockquote><p>We have not found any evidence of unauthorized modification of the packagesor access to the services storing them.</p></blockquote><p>並不是因為 key 被 compromise，僅是因為 key 不符合公司的安全規範，所以就進行了一次 rekey。</p><p>GPG key rekey 並不如換憑證一樣，只要重簽一張就好 (因為信賴建立在已知的第三方 CA 上)。GPG key rekey 需要透過可信管道重新宣告 fingerprint 並請大家 import 新的 key。這個轉換的成本，相較換憑證應是高非常多且難以量化的。</p><p>沒想到居然僅為了不合安全規範就進行 rekey，不愧是國際一線的軟體公司！</p><p>See: <a href="https://about.gitlab.com/blog/2021/06/16/gpg-key-used-to-sign-gitlab-runner-packages-rotated/">The GPG key used to sign GitLab Runner packages has been rotated | GitLab</a></p>]]></content>
     
     
       
@@ -128,9 +128,9 @@ Remote Development 系列 extension 加入了新成員:
     <category term="notes" scheme="https://blog.bitisle.net/categories/notes/"/>
     
     
-    <category term="github" scheme="https://blog.bitisle.net/tags/github/"/>
-    
     <category term="gitlab" scheme="https://blog.bitisle.net/tags/gitlab/"/>
+    
+    <category term="github" scheme="https://blog.bitisle.net/tags/github/"/>
     
     <category term="blog" scheme="https://blog.bitisle.net/tags/blog/"/>
     
@@ -396,9 +396,9 @@ SSH agent 是個方便的好東西。因為它可以幫我們記住已經解鎖�
     <category term="notes" scheme="https://blog.bitisle.net/categories/notes/"/>
     
     
-    <category term="git" scheme="https://blog.bitisle.net/tags/git/"/>
-    
     <category term="samba" scheme="https://blog.bitisle.net/tags/samba/"/>
+    
+    <category term="git" scheme="https://blog.bitisle.net/tags/git/"/>
     
   </entry>
   

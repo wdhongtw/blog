@@ -10,9 +10,9 @@ secured according to GitLab’s security policies.</p>
 or access to the services storing them.</p>
 </blockquote>
 <p>並不是因為 key 被 compromise，僅是因為 key 不符合公司的安全規範，所以就進行了一次 rekey。</p>
-<p>GPG key rotate/rekey 並不憑證一樣，只要重簽一張就好 (因為信賴建立在已知的第三方 CA 上)。
-GPG key 需要透過可信管道重新宣告 fingerprint 並請大家 import 新的 key。
-這個轉換的成品相較換憑證應是高非常多且難以量化的。</p>
+<p>GPG key rekey 並不如換憑證一樣，只要重簽一張就好 (因為信賴建立在已知的第三方 CA 上)。
+GPG key rekey 需要透過可信管道重新宣告 fingerprint 並請大家 import 新的 key。
+這個轉換的成本，相較換憑證應是高非常多且難以量化的。</p>
 <p>沒想到居然僅為了不合安全規範就進行 rekey，不愧是國際一線的軟體公司！</p>
 <p>See: <a target="_blank" rel="noopener external nofollow noreferrer" href="https://about.gitlab.com/blog/2021/06/16/gpg-key-used-to-sign-gitlab-runner-packages-rotated/">The GPG key used to sign GitLab Runner packages has been rotated | GitLab</a></p>
 </div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2021-05-06T00:00:00.000Z" title="5/6/2021, 12:00:00 AM">2021-05-06</time></span><span class="level-item">Updated&nbsp;<time dateTime="2021-05-06T00:00:00.000Z" title="5/6/2021, 12:00:00 AM">2021-05-06</time></span><span class="level-item"><a class="link-muted" href="/categories/notes/">notes</a></span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2021/05/06/gpg-key-extend-expiration-date.html">延長或縮短 GPG 金鑰的過期時間 (Expiration Time)</a></h1><div class="content"><p>筆者在 2018 年的時候開了第一個真的有在長期使用的 GPG 金鑰。</p>
