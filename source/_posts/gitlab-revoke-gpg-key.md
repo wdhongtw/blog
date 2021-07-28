@@ -16,9 +16,9 @@ tags: [gitlab, gnupg]
 
 並不是因為 key 被 compromise，僅是因為 key 不符合公司的安全規範，所以就進行了一次 rekey。
 
-GPG key rotate/rekey 並不憑證一樣，只要重簽一張就好 (因為信賴建立在已知的第三方 CA 上)。
-GPG key 需要透過可信管道重新宣告 fingerprint 並請大家 import 新的 key。
-這個轉換的成品相較換憑證應是高非常多且難以量化的。
+GPG key rekey 並不如換憑證一樣，只要重簽一張就好 (因為信賴建立在已知的第三方 CA 上)。
+GPG key rekey 需要透過可信管道重新宣告 fingerprint 並請大家 import 新的 key。
+這個轉換的成本，相較換憑證應是高非常多且難以量化的。
 
 沒想到居然僅為了不合安全規範就進行 rekey，不愧是國際一線的軟體公司！
 
