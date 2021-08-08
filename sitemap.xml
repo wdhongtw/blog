@@ -11,6 +11,15 @@
   </url>
   
   <url>
+    <loc>https://blog.bitisle.net/2021/08/08/single-node-ceph-cluster.html</loc>
+    
+    <lastmod>2021-08-08</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.bitisle.net/2021/07/28/nats-brief-intro.html</loc>
     
     <lastmod>2021-07-28</lastmod>
@@ -264,6 +273,13 @@
   
   <url>
     <loc>https://blog.bitisle.net/tags/samba/</loc>
+    <lastmod>2021-08-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.bitisle.net/tags/ceph/</loc>
     <lastmod>2021-08-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>

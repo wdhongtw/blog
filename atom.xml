@@ -6,7 +6,7 @@
   <link href="https://blog.bitisle.net/atom.xml" rel="self"/>
   
   <link href="https://blog.bitisle.net/"/>
-  <updated>2021-07-28T16:23:00.000Z</updated>
+  <updated>2021-08-08T03:52:24.000Z</updated>
   <id>https://blog.bitisle.net/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>單台機器的 Ceph 部屬</title>
+    <link href="https://blog.bitisle.net/2021/08/08/single-node-ceph-cluster.html"/>
+    <id>https://blog.bitisle.net/2021/08/08/single-node-ceph-cluster.html</id>
+    <published>2021-08-08T03:52:24.000Z</published>
+    <updated>2021-08-08T03:52:24.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="原由"><a href="#原由" class="headerlink" title="原由"></a>原由</h2><p>Ceph 的預設設定對資料的 replica 行為要求嚴格。若只有單台機器或是硬碟數量受限，往往架設起來的 Ceph 無法順利存放資料。</p><p>此篇筆記關注的目標如下</p><blockquote><p>若想要用最少資源，建立可用的 Ceph 環境，需要做哪些額外的調整？</p></blockquote><h2 id="背景知識"><a href="#背景知識" class="headerlink" title="背景知識"></a>背景知識</h2><p>Ceph 是一套開源的儲存叢集 solution。 可以整合多個儲存設備並在其上提供RADOSGW, RBD, Ceph FS 等不同層級的存取介面。</p><p><img src="https://docs.ceph.com/en/latest/_images/stack.png" alt="ceph-stack"></p><p>對於每個儲存設備 (HDD, SSD)，Ceph 會建立對應的 OSD 來管理儲存設備。有了儲存設備之後，Ceph 會建立邏輯上的 pool 作為管理空間的單位。Pool 底下會有多個 PG(placement group) 作為實際存放資料至 OSD 中的區塊。</p><p>在 Ceph 的預設設定中，一般 pool 的 replica 行為如下</p><ul><li>要有三份 replica</li><li>replica 要分散在不同的 host 上</li></ul><p>在開發環境中，資料掉了其實並無傷大雅，三份 replica 意味著儲存空間的浪費。且若資料真的要放在不同的 host 上，連同 replica 三份這點，我們就至少要開三台機器，增加無謂的管理成本。</p><h2 id="解決方式"><a href="#解決方式" class="headerlink" title="解決方式"></a>解決方式</h2><p>假設我們都是透過 <code>cephadm bootstrap</code> 來架設 Ceph。</p><p>Ceph cluster 建立好，也設定完需要的 OSD 之後，就可以來建立 pool。</p><p>根據 pool 的目的不同，要解決單台機器部屬 Ceph 的限制，大概會有兩種做法。</p><h3 id="降低-Pool-Size"><a href="#降低-Pool-Size" class="headerlink" title="降低 Pool Size"></a>降低 Pool Size</h3><p>Pool size 此術語意味著該 pool 下的 PG 要 replica 幾份。若某 pool 是拿供他人存放資料，或是會使用較多空間的，可以把 size 降為 1。</p><p>調整完之後就相當於該 pool 內的所有資料都不會有 replica。</p><p>範例如下:</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ceph osd pool create &quot;&lt;pool name&gt;&quot;</span><br><span class="line">ceph osd pool set &quot;&lt;pool name&gt;&quot; size 1</span><br><span class="line">ceph osd pool application enable &quot;&lt;pool name&gt;&quot; rbd</span><br></pre></td></tr></table></figure><h3 id="調整-Choose-Leaf-行為"><a href="#調整-Choose-Leaf-行為" class="headerlink" title="調整 Choose Leaf 行為"></a>調整 Choose Leaf 行為</h3><p>Ceph 有定義不同層級的資料分散設定。預設值為 <code>host</code>，意味著只有一台機器的情況下，資料會無法複製。若調整為 <code>osd</code>，只要該機器上有多顆硬碟即可滿足複製條件。若是針對 Ceph 自行建立出來，管理 meta data 的 pool (e.g. <code>device_health_metrics</code>)可以考慮使用此方式處理。</p><p>設定方式大概有兩種。</p><p><strong>方法一</strong>: 調整 Ceph global 設定</p><p>編輯 <code>/etc/ceph.conf</code> 並在 global section 下加入 <code>osd_crush_chooseleaf_type</code> 設定</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[global]</span><br><span class="line">...</span><br><span class="line">    osd_crush_chooseleaf_type = 0</span><br></pre></td></tr></table></figure><p>或是直接執行 command</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ceph config set global osd_crush_chooseleaf_type 0</span><br></pre></td></tr></table></figure><p>這邊的 <code>0</code> 代表 OSD。預設的對應列表如下</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">type 0 osd</span><br><span class="line">type 1 host</span><br><span class="line">...</span><br><span class="line">type 9 zone</span><br><span class="line">type 10 region</span><br><span class="line">type 11 root</span><br></pre></td></tr></table></figure><p><strong>方法二</strong>: 修改 crush map 內容</p><p>筆者有注意到有時即使有執行方法一，pool 還是不會受到設定影響。 (相關知識還太少，不太確定具體原因) 不過針對此狀況，還有第二個方法可以使用。</p><p>此方法會用到 <code>crushtool</code> 指令 (Ubuntu 中需要額外安裝 <code>ceph-base</code> 套件)</p><p>首先執行指令將目前的 crush map 撈出來</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ceph osd getcrushmap -o &quot;compiled-crush-map&quot;</span><br><span class="line">crushtool -d &quot;compiled-crush-map&quot; -o &quot;crush-map&quot;</span><br></pre></td></tr></table></figure><p>接著修改 <code>crush-map</code> 檔案內容，應該會有一行有 <code>step chooseleaf</code> 開頭的設定，把最後的type 從 <code>host</code> 調整為 <code>osd</code>。</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> Before</span></span><br><span class="line">step chooseleaf firstn &lt;number&gt; type host</span><br><span class="line"><span class="meta">#</span><span class="bash"> After</span></span><br><span class="line">step chooseleaf firstn &lt;number&gt; type osd</span><br></pre></td></tr></table></figure><p>最後將修改好的 crush map 設定塞回去。</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">crushtool -c &quot;crush-map&quot; -o &quot;compiled-crush-map&quot;</span><br><span class="line">ceph osd setcrushmap -i &quot;compiled-crush-map&quot;</span><br></pre></td></tr></table></figure><p>相關 reference link</p><ul><li><a href="https://docs.ceph.com/en/latest/rados/configuration/common/">Common Settings — Ceph Documentation</a></li><li><a href="https://access.redhat.com/documentation/en-us/red_hat_ceph_storage/1.2.3/html/installation_guide_for_centos_x86_64/create_a_cluster">Chapter 4. Create a Cluster Red Hat Ceph Storage 1.2.3 | Red Hat Customer Portal</a></li><li><a href="https://docs.ceph.com/en/latest/rados/operations/crush-map/">CRUSH Maps — Ceph Documentation</a></li><li><a href="https://docs.ceph.com/en/latest/rados/operations/crush-map-edits/">Manually editing a CRUSH Map — Ceph Documentation</a></li><li><a href="https://docs.ceph.com/en/latest/rados/operations/crush-map/">CRUSH Maps — Ceph Documentation</a></li></ul><h2 id="結語"><a href="#結語" class="headerlink" title="結語"></a>結語</h2><p>筆者在公司業務並不負責維護 production 的 Ceph cluster，僅是為了建立 Kubernetes開發環境，需要有個基本會動的 Ceph。</p><p>為了用最少資源建立 Ceph 環境，需要調整相關設定來改變 Ceph 行為。只可惜相關的資源不是很夠，一路跌跌撞撞下來，決定寫下這篇筆記，希望造福未來的自己，也同時照顧他人。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;原由&quot;&gt;&lt;a href=&quot;#原由&quot; class=&quot;headerlink&quot; title=&quot;原由&quot;&gt;&lt;/a&gt;原由&lt;/h2&gt;&lt;p&gt;Ceph 的預設設定對資料的 replica 行為要求嚴格。
+若只有單台機器或是硬碟數量受限，往往架設起來的 Ceph 無法順利存放資料。&lt;</summary>
+      
+    
+    
+    
+    <category term="notes" scheme="https://blog.bitisle.net/categories/notes/"/>
+    
+    
+    <category term="ceph" scheme="https://blog.bitisle.net/tags/ceph/"/>
+    
+  </entry>
   
   <entry>
     <title>NATS 與 JetStream 簡易介紹</title>
