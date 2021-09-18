@@ -6,7 +6,7 @@
   <link href="https://blog.bitisle.net/atom.xml" rel="self"/>
   
   <link href="https://blog.bitisle.net/"/>
-  <updated>2021-08-08T03:52:24.000Z</updated>
+  <updated>2021-09-23T13:18:47.000Z</updated>
   <id>https://blog.bitisle.net/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Google 更新 Go 的社群行為準則</title>
+    <link href="https://blog.bitisle.net/2021/09/23/golang-coc-update.html"/>
+    <id>https://blog.bitisle.net/2021/09/23/golang-coc-update.html</id>
+    <published>2021-09-23T13:18:47.000Z</published>
+    <updated>2021-09-23T13:18:47.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>昨天 Go blog 上出新文章，說要更新 Code of Conduct。</p><p>一直一來覺得每個社群的 CoC 都寫得差不多，不外乎是要互相尊重、開放透明、建設性發言等等。也因為都差不多，平常也不會去細看。反正就是些正常人該有的道德觀。因此，看到說要更新 Code of Conduct 讓我感到有點好奇。</p><p>讀一讀讀下去，其實這次 Go community 的 CoC 就是新增一條：</p><blockquote><p><strong>Be responsible.</strong> What you say and do matters. Take responsibility …</p></blockquote><p>沒想到連這個都要寫進 CoC …。可能 Go 的核心開發團隊看 issue 真的看到心累了？ XD</p><p>See: <a href="https://go.dev/blog/conduct-2021">Code of Conduct Updates - go.dev</a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;昨天 Go blog 上出新文章，說要更新 Code of Conduct。&lt;/p&gt;
+&lt;p&gt;一直一來覺得每個社群的 CoC 都寫得差不多，不外乎是要互相尊重、開放透明、建設性發言等等。
+也因為都差不多，平常也不會去細看。反正就是些正常人該有的道德觀。
+因此，看到說要更新 C</summary>
+      
+    
+    
+    
+    <category term="news" scheme="https://blog.bitisle.net/categories/news/"/>
+    
+    
+    <category term="golang" scheme="https://blog.bitisle.net/tags/golang/"/>
+    
+    <category term="community" scheme="https://blog.bitisle.net/tags/community/"/>
+    
+  </entry>
   
   <entry>
     <title>單台機器的 Ceph 部屬</title>
@@ -64,11 +93,11 @@
     <category term="notes" scheme="https://blog.bitisle.net/categories/notes/"/>
     
     
+    <category term="golang" scheme="https://blog.bitisle.net/tags/golang/"/>
+    
     <category term="nats" scheme="https://blog.bitisle.net/tags/nats/"/>
     
     <category term="mq" scheme="https://blog.bitisle.net/tags/mq/"/>
-    
-    <category term="golang" scheme="https://blog.bitisle.net/tags/golang/"/>
     
   </entry>
   
