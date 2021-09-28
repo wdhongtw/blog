@@ -1,5 +1,5 @@
 ---
-title: 單台機器的 Ceph 部屬
+title: 單台機器的 Ceph 部署
 date: 2021-08-08 11:52:24
 categories: [notes]
 tags: [ceph]
@@ -40,7 +40,7 @@ Pool 底下會有多個 PG(placement group) 作為實際存放資料至 OSD 中�
 
 Ceph cluster 建立好，也設定完需要的 OSD 之後，就可以來建立 pool。
 
-根據 pool 的目的不同，要解決單台機器部屬 Ceph 的限制，大概會有兩種做法。
+根據 pool 的目的不同，要解決單台機器部署 Ceph 的限制，大概會有兩種做法。
 
 ### 降低 Pool Size
 
