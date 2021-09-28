@@ -199,21 +199,28 @@
   </url>
   
   <url>
-    <loc>https://blog.bitisle.net/tags/gitlab/</loc>
-    <lastmod>2021-09-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.bitisle.net/tags/gnupg/</loc>
-    <lastmod>2021-09-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.bitisle.net/tags/github/</loc>
+    <lastmod>2021-09-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.bitisle.net/tags/blog/</loc>
+    <lastmod>2021-09-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.bitisle.net/tags/jekyll/</loc>
+    <lastmod>2021-09-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.bitisle.net/tags/gitlab/</loc>
     <lastmod>2021-09-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -228,6 +235,13 @@
   
   <url>
     <loc>https://blog.bitisle.net/tags/git/</loc>
+    <lastmod>2021-09-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.bitisle.net/tags/gnupg/</loc>
     <lastmod>2021-09-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -297,34 +311,6 @@
   </url>
   
   <url>
-    <loc>https://blog.bitisle.net/tags/samba/</loc>
-    <lastmod>2021-09-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.bitisle.net/tags/ceph/</loc>
-    <lastmod>2021-09-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.bitisle.net/tags/vim/</loc>
-    <lastmod>2021-09-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.bitisle.net/tags/spell/</loc>
-    <lastmod>2021-09-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.bitisle.net/tags/ide/</loc>
     <lastmod>2021-09-28</lastmod>
     <changefreq>weekly</changefreq>
@@ -346,14 +332,28 @@
   </url>
   
   <url>
-    <loc>https://blog.bitisle.net/tags/blog/</loc>
+    <loc>https://blog.bitisle.net/tags/vim/</loc>
     <lastmod>2021-09-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://blog.bitisle.net/tags/jekyll/</loc>
+    <loc>https://blog.bitisle.net/tags/spell/</loc>
+    <lastmod>2021-09-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.bitisle.net/tags/ceph/</loc>
+    <lastmod>2021-09-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.bitisle.net/tags/samba/</loc>
     <lastmod>2021-09-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
