@@ -143,6 +143,7 @@ article:
     readtime: false
     # Article licensing block
     # licenses:
+    update_time: auto
 # Search plugin configurations
 # https://ppoffice.github.io/hexo-theme-icarus/categories/Plugins/Search/
 search:
