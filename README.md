@@ -6,9 +6,14 @@ For more detail, see official documents.
 
 ## Setup Locally
 
-Assume Node.js toolchain is already provided.
+NodeJS 12 or above is required
 
 ```shell
-npm install # Install hexo and other dependencies
+# Install nodeenv from some package management system.
+nodeenv -n 14.18.3 --prebuilt venv
+```
+
+```shell
+npm install --no-optional # Install hexo and other dependencies
 npm run server # Launch a local server
 ```
