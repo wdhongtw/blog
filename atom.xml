@@ -125,11 +125,11 @@
     <category term="notes" scheme="https://blog.bitisle.net/categories/notes/"/>
     
     
+    <category term="golang" scheme="https://blog.bitisle.net/tags/golang/"/>
+    
     <category term="nats" scheme="https://blog.bitisle.net/tags/nats/"/>
     
     <category term="mq" scheme="https://blog.bitisle.net/tags/mq/"/>
-    
-    <category term="golang" scheme="https://blog.bitisle.net/tags/golang/"/>
     
   </entry>
   
