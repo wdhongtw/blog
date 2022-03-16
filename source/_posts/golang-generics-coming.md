@@ -25,3 +25,7 @@ Golang 是一個近 10 年快速串紅的程式語言，但在很多面向其實
 
 不過這些都是過去式了，從今天開始，大家都可以寫自己想要的 generic code / library / framework。 :D
 
+## References
+
+- [Go 1.18 Release Notes](https://tip.golang.org/doc/go1.18)
+- [Tutorial: Getting started with generics](https://go.dev/doc/tutorial/generics)
