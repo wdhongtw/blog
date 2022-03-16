@@ -9,7 +9,7 @@ tags: [golang, generic]
 今天 Golang 1.18 終於正式釋出啦！
 我們終於有辦法在 Golang 裡做 generic programming 啦！
 
-Golang 是一個近 10 年快速串紅的程式語言，但在很多面向其實還是非常土炮。
+Golang 是一個近 10 年快速竄紅的程式語言，但在很多面向其實還是非常土炮。
 得靠後續社群不斷的討論與貢獻才達到一個比較完善的水準。 像是..
 
 - `context` package in Golang 1.7: 解決 long job cancelling 的問題
