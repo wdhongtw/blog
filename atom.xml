@@ -421,9 +421,9 @@ SSH agent 是個方便的好東西。因為它可以幫我們記住已經解鎖�
     <category term="notes" scheme="https://blog.bitisle.net/categories/notes/"/>
     
     
-    <category term="github" scheme="https://blog.bitisle.net/tags/github/"/>
-    
     <category term="security" scheme="https://blog.bitisle.net/tags/security/"/>
+    
+    <category term="github" scheme="https://blog.bitisle.net/tags/github/"/>
     
     <category term="fido" scheme="https://blog.bitisle.net/tags/fido/"/>
     

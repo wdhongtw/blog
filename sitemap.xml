@@ -173,6 +173,27 @@
 
   
   <url>
+    <loc>https://blog.bitisle.net/tags/docker/</loc>
+    <lastmod>2022-03-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.bitisle.net/tags/secret/</loc>
+    <lastmod>2022-03-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.bitisle.net/tags/security/</loc>
+    <lastmod>2022-03-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.bitisle.net/tags/email/</loc>
     <lastmod>2022-03-16</lastmod>
     <changefreq>weekly</changefreq>
@@ -208,27 +229,6 @@
   </url>
   
   <url>
-    <loc>https://blog.bitisle.net/tags/docker/</loc>
-    <lastmod>2022-03-16</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.bitisle.net/tags/secret/</loc>
-    <lastmod>2022-03-16</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.bitisle.net/tags/security/</loc>
-    <lastmod>2022-03-16</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.bitisle.net/tags/gitlab/</loc>
     <lastmod>2022-03-16</lastmod>
     <changefreq>weekly</changefreq>
@@ -237,6 +237,13 @@
   
   <url>
     <loc>https://blog.bitisle.net/tags/golang/</loc>
+    <lastmod>2022-03-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.bitisle.net/tags/community/</loc>
     <lastmod>2022-03-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -368,13 +375,6 @@
     <priority>0.2</priority>
   </url>
   
-  <url>
-    <loc>https://blog.bitisle.net/tags/community/</loc>
-    <lastmod>2022-03-16</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
 
   
   <url>
@@ -385,14 +385,14 @@
   </url>
   
   <url>
-    <loc>https://blog.bitisle.net/categories/tips/</loc>
+    <loc>https://blog.bitisle.net/categories/news/</loc>
     <lastmod>2022-03-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://blog.bitisle.net/categories/news/</loc>
+    <loc>https://blog.bitisle.net/categories/tips/</loc>
     <lastmod>2022-03-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
