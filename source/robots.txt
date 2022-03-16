@@ -2,8 +2,5 @@ User-agent: *
 Disallow: /js/
 Disallow: /css/
 Disallow: /fonts/
-Disallow: /archives/
-Disallow: /categories/
-Disallow: /tags/
 
 Sitemap: https://blog.bitisle.net/sitemap.xml
