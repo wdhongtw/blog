@@ -259,7 +259,7 @@
   </url>
   
   <url>
-    <loc>https://blog.bitisle.net/tags/community/</loc>
+    <loc>https://blog.bitisle.net/tags/gnupg/</loc>
     <lastmod>2023-08-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -281,13 +281,6 @@
   
   <url>
     <loc>https://blog.bitisle.net/tags/authentication/</loc>
-    <lastmod>2023-08-29</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.bitisle.net/tags/gnupg/</loc>
     <lastmod>2023-08-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -391,6 +384,13 @@
     <priority>0.2</priority>
   </url>
   
+  <url>
+    <loc>https://blog.bitisle.net/tags/community/</loc>
+    <lastmod>2023-08-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
 
   
   <url>
@@ -401,14 +401,14 @@
   </url>
   
   <url>
-    <loc>https://blog.bitisle.net/categories/news/</loc>
+    <loc>https://blog.bitisle.net/categories/tips/</loc>
     <lastmod>2023-08-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://blog.bitisle.net/categories/tips/</loc>
+    <loc>https://blog.bitisle.net/categories/news/</loc>
     <lastmod>2023-08-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
