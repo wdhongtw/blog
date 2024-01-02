@@ -10,7 +10,7 @@ NodeJS 12 or above is required
 
 ```shell
 # Install nodeenv from some package management system.
-nodeenv -n 14.18.3 --prebuilt venv
+nodeenv -n 20.10.0 --prebuilt venv
 ```
 
 ```shell
