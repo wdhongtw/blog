@@ -240,11 +240,11 @@ Remote Development 系列 extension 加入了新成員:
     <category term="news" scheme="https://blog.bitisle.net/categories/news/"/>
     
     
+    <category term="github" scheme="https://blog.bitisle.net/tags/github/"/>
+    
     <category term="ide" scheme="https://blog.bitisle.net/tags/ide/"/>
     
     <category term="vscode" scheme="https://blog.bitisle.net/tags/vscode/"/>
-    
-    <category term="github" scheme="https://blog.bitisle.net/tags/github/"/>
     
     <category term="development" scheme="https://blog.bitisle.net/tags/development/"/>
     
@@ -273,9 +273,9 @@ Remote Development 系列 extension 加入了新成員:
     
     <category term="github" scheme="https://blog.bitisle.net/tags/github/"/>
     
-    <category term="blog" scheme="https://blog.bitisle.net/tags/blog/"/>
-    
     <category term="gitlab" scheme="https://blog.bitisle.net/tags/gitlab/"/>
+    
+    <category term="blog" scheme="https://blog.bitisle.net/tags/blog/"/>
     
   </entry>
   
@@ -449,9 +449,9 @@ SSH agent 是個方便的好東西。因為它可以幫我們記住已經解鎖�
     <category term="notes" scheme="https://blog.bitisle.net/categories/notes/"/>
     
     
-    <category term="github" scheme="https://blog.bitisle.net/tags/github/"/>
-    
     <category term="security" scheme="https://blog.bitisle.net/tags/security/"/>
+    
+    <category term="github" scheme="https://blog.bitisle.net/tags/github/"/>
     
     <category term="fido" scheme="https://blog.bitisle.net/tags/fido/"/>
     
