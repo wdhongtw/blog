@@ -6,7 +6,7 @@
   <link href="https://blog.bitisle.net/atom.xml" rel="self"/>
   
   <link href="https://blog.bitisle.net/"/>
-  <updated>2024-06-05T09:38:00.000Z</updated>
+  <updated>2024-07-08T11:28:00.000Z</updated>
   <id>https://blog.bitisle.net/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Introduction of Function Hijacking in C</title>
+    <link href="https://blog.bitisle.net/2024/07/08/intro-hijack-c-function.html"/>
+    <id>https://blog.bitisle.net/2024/07/08/intro-hijack-c-function.html</id>
+    <published>2024-07-08T11:28:00.000Z</published>
+    <updated>2024-07-08T11:28:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>Thanks to the symbol-lazy-loading ability in Unix environment,we can do many interesting thing on functions from some shared librarywhen executing some executables.</p><p>All we need to do are</p><ul><li>Implement a shared library that contains the functions we want to hijack.</li><li>Run the executable with our magic library inserted.</li></ul><h2 id="Make-a-Shared-Library"><a href="#Make-a-Shared-Library" class="headerlink" title="Make a Shared Library"></a>Make a Shared Library</h2><p>If we want to replace some function with stub &#x2F; fake implementation.we can just implement a function with the same name and the same signature.</p><p>For example, if we want to fixed the clock during unit test …</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// in hijack.c</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;time.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">// a &quot;time&quot; function which always return the timestamp of the epoch.</span></span><br><span class="line"><span class="type">time_t</span> <span class="title function_">time</span><span class="params">(<span class="type">time_t</span>* arg)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (arg)</span><br><span class="line">        *arg = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>If we want do observation about some function call, but still delegate thecall to the original function, we can implement a function that loadcorresponding function at runtime and pass the function call.</p><p>For example, if we want to monitor the call sequence of file open action.</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// in hijack.c</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;dlfcn.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;time.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">// write &quot;open&quot; action to standard error before open the file</span></span><br><span class="line">FILE* <span class="title function_">fopen</span><span class="params">(<span class="type">const</span> <span class="type">char</span>* <span class="keyword">restrict</span> path, <span class="type">const</span> <span class="type">char</span>* <span class="keyword">restrict</span> mode)</span> &#123;</span><br><span class="line">    <span class="type">static</span> <span class="type">int</span> used_count = <span class="number">0</span>;</span><br><span class="line">    used_count += <span class="number">1</span>;</span><br><span class="line">    <span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">&quot;open file [%d]: \&quot;%s\&quot;\n&quot;</span>, used_count, path);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">typedef</span> FILE* (*wrapped_type)(<span class="type">const</span> <span class="type">char</span>* <span class="keyword">restrict</span> path, <span class="type">const</span> <span class="type">char</span>* <span class="keyword">restrict</span> mode);</span><br><span class="line">    <span class="comment">// no dlopen, just search the function in magic handle RTLD_NEXT</span></span><br><span class="line">    wrapped_type wrapped = dlsym(RTLD_NEXT, <span class="string">&quot;fopen&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> wrapped(path, mode);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>After finish our implementation, compile them as a shared library,called <code>hijack.so</code> here.</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cc -fPIC -shared -o hijack.so hijack.c</span><br></pre></td></tr></table></figure><h2 id="Hijack-during-Actual-Execution"><a href="#Hijack-during-Actual-Execution" class="headerlink" title="Hijack during Actual Execution"></a>Hijack during Actual Execution</h2><p>We can use <code>LD_PRELOAD</code> environment variable to do insert our specialshared library for any executable during execution.</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">LD_PRELOAD=&quot;path-to-shared-lib&quot; executable</span><br></pre></td></tr></table></figure><p>For example, if we want to use the implementations in last section inour executable, called <code>app</code> here.</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// app.c</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;assert.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;time.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    FILE* handle = fopen(<span class="string">&quot;output.txt&quot;</span>, <span class="string">&quot;a&quot;</span>);</span><br><span class="line">    assert(handle);</span><br><span class="line">    fclose(handle);</span><br><span class="line"></span><br><span class="line">    <span class="type">time_t</span> current = time(<span class="literal">NULL</span>);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;now: %s&quot;</span>, asctime(gmtime(&amp;current)));</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> EXIT_SUCCESS;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>(Compile and) run the executable</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cc -o app app.c</span><br><span class="line">LD_PRELOAD=./hijack.so ./app</span><br></pre></td></tr></table></figure><p>Output</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">open file [1]: &quot;output.txt&quot;</span><br><span class="line">now: Thu Jan  1 00:00:00 1970</span><br></pre></td></tr></table></figure><p>The open-file action is traced, and the time is fixed to the epoch.</p><p>If we need to overwrite functions with more than one shared library,just use <code>:</code> to separate them in <code>LD_PRELOAD</code>.</p><h2 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h2><p>It’s a powerful feature, it allows we to do observation, to replace withmock&#x2F;fake implementation, or sometime even to apply emergency patch.</p><p>And all make this possible are the dynamic linking mechanism, andthe one-to-one mapping from symbol from sources to libraries&#x2F;binaries.</p><p>Although development in C is somehow inconvenient, but it’s stilla interesting experience when seeing this kind of usage. :D</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;Thanks to the symbol-lazy-loading ability in Unix environment,
+we can do many interesting thing on functions from some shared library
+whe</summary>
+      
+    
+    
+    
+    <category term="tips" scheme="https://blog.bitisle.net/categories/tips/"/>
+    
+    
+    <category term="c" scheme="https://blog.bitisle.net/tags/c/"/>
+    
+    <category term="testing" scheme="https://blog.bitisle.net/tags/testing/"/>
+    
+    <category term="development" scheme="https://blog.bitisle.net/tags/development/"/>
+    
+  </entry>
   
   <entry>
     <title>Python 的 type 不是 type？</title>
@@ -270,11 +300,11 @@ Remote Development 系列 extension 加入了新成員:
     
     <category term="github" scheme="https://blog.bitisle.net/tags/github/"/>
     
+    <category term="development" scheme="https://blog.bitisle.net/tags/development/"/>
+    
     <category term="ide" scheme="https://blog.bitisle.net/tags/ide/"/>
     
     <category term="vscode" scheme="https://blog.bitisle.net/tags/vscode/"/>
-    
-    <category term="development" scheme="https://blog.bitisle.net/tags/development/"/>
     
   </entry>
   
