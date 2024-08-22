@@ -4,7 +4,16 @@
   <url>
     <loc>https://blog.bitisle.net/about/index.html</loc>
     
-    <lastmod>2024-07-13</lastmod>
+    <lastmod>2024-08-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.bitisle.net/2024/08/22/golang-iterator-functions.html</loc>
+    
+    <lastmod>2024-08-22</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -202,7 +211,7 @@
 
   <url>
     <loc>https://blog.bitisle.net/</loc>
-    <lastmod>2024-07-13</lastmod>
+    <lastmod>2024-08-22</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -210,238 +219,245 @@
   
   <url>
     <loc>https://blog.bitisle.net/tags/docker/</loc>
-    <lastmod>2024-07-13</lastmod>
+    <lastmod>2024-08-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.bitisle.net/tags/secret/</loc>
-    <lastmod>2024-07-13</lastmod>
+    <lastmod>2024-08-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.bitisle.net/tags/security/</loc>
-    <lastmod>2024-07-13</lastmod>
+    <lastmod>2024-08-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.bitisle.net/tags/email/</loc>
-    <lastmod>2024-07-13</lastmod>
+    <lastmod>2024-08-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.bitisle.net/tags/rfc/</loc>
-    <lastmod>2024-07-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.bitisle.net/tags/github/</loc>
-    <lastmod>2024-07-13</lastmod>
+    <lastmod>2024-08-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.bitisle.net/tags/gitlab/</loc>
-    <lastmod>2024-07-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.bitisle.net/tags/blog/</loc>
-    <lastmod>2024-07-13</lastmod>
+    <lastmod>2024-08-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.bitisle.net/tags/gnupg/</loc>
-    <lastmod>2024-07-13</lastmod>
+    <lastmod>2024-08-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.bitisle.net/tags/golang/</loc>
-    <lastmod>2024-07-13</lastmod>
+    <lastmod>2024-08-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.bitisle.net/tags/community/</loc>
-    <lastmod>2024-07-13</lastmod>
+    <lastmod>2024-08-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.bitisle.net/tags/generic/</loc>
-    <lastmod>2024-07-13</lastmod>
+    <lastmod>2024-08-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.bitisle.net/tags/functional/</loc>
+    <lastmod>2024-08-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.bitisle.net/tags/c/</loc>
-    <lastmod>2024-07-13</lastmod>
+    <lastmod>2024-08-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.bitisle.net/tags/testing/</loc>
-    <lastmod>2024-07-13</lastmod>
+    <lastmod>2024-08-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.bitisle.net/tags/development/</loc>
-    <lastmod>2024-07-13</lastmod>
+    <lastmod>2024-08-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.bitisle.net/tags/github/</loc>
+    <lastmod>2024-08-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.bitisle.net/tags/blog/</loc>
+    <lastmod>2024-08-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.bitisle.net/tags/kubernetes/</loc>
-    <lastmod>2024-07-13</lastmod>
+    <lastmod>2024-08-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.bitisle.net/tags/log/</loc>
-    <lastmod>2024-07-13</lastmod>
+    <lastmod>2024-08-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.bitisle.net/tags/authentication/</loc>
-    <lastmod>2024-07-13</lastmod>
+    <lastmod>2024-08-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.bitisle.net/tags/nats/</loc>
-    <lastmod>2024-07-13</lastmod>
+    <lastmod>2024-08-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.bitisle.net/tags/mq/</loc>
-    <lastmod>2024-07-13</lastmod>
+    <lastmod>2024-08-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.bitisle.net/tags/python/</loc>
-    <lastmod>2024-07-13</lastmod>
+    <lastmod>2024-08-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.bitisle.net/tags/typing/</loc>
-    <lastmod>2024-07-13</lastmod>
+    <lastmod>2024-08-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.bitisle.net/tags/fido/</loc>
-    <lastmod>2024-07-13</lastmod>
+    <lastmod>2024-08-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.bitisle.net/tags/ssh/</loc>
-    <lastmod>2024-07-13</lastmod>
+    <lastmod>2024-08-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.bitisle.net/tags/systemd/</loc>
-    <lastmod>2024-07-13</lastmod>
+    <lastmod>2024-08-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.bitisle.net/tags/samba/</loc>
-    <lastmod>2024-07-13</lastmod>
+    <lastmod>2024-08-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.bitisle.net/tags/git/</loc>
-    <lastmod>2024-07-13</lastmod>
+    <lastmod>2024-08-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.bitisle.net/tags/ceph/</loc>
-    <lastmod>2024-07-13</lastmod>
+    <lastmod>2024-08-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.bitisle.net/tags/socks/</loc>
-    <lastmod>2024-07-13</lastmod>
+    <lastmod>2024-08-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.bitisle.net/tags/vim/</loc>
-    <lastmod>2024-07-13</lastmod>
+    <lastmod>2024-08-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.bitisle.net/tags/spell/</loc>
-    <lastmod>2024-07-13</lastmod>
+    <lastmod>2024-08-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.bitisle.net/tags/ide/</loc>
-    <lastmod>2024-07-13</lastmod>
+    <lastmod>2024-08-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.bitisle.net/tags/vscode/</loc>
-    <lastmod>2024-07-13</lastmod>
+    <lastmod>2024-08-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.bitisle.net/tags/jekyll/</loc>
-    <lastmod>2024-07-13</lastmod>
+    <lastmod>2024-08-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
@@ -450,21 +466,21 @@
   
   <url>
     <loc>https://blog.bitisle.net/categories/notes/</loc>
-    <lastmod>2024-07-13</lastmod>
+    <lastmod>2024-08-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.bitisle.net/categories/news/</loc>
-    <lastmod>2024-07-13</lastmod>
+    <lastmod>2024-08-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.bitisle.net/categories/tips/</loc>
-    <lastmod>2024-07-13</lastmod>
+    <lastmod>2024-08-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
