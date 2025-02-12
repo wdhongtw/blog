@@ -280,20 +280,6 @@
   </url>
   
   <url>
-    <loc>https://blog.bitisle.net/tags/email/</loc>
-    <lastmod>2025-02-12</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.bitisle.net/tags/rfc/</loc>
-    <lastmod>2025-02-12</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.bitisle.net/tags/github/</loc>
     <lastmod>2025-02-12</lastmod>
     <changefreq>weekly</changefreq>
@@ -315,6 +301,20 @@
   </url>
   
   <url>
+    <loc>https://blog.bitisle.net/tags/email/</loc>
+    <lastmod>2025-02-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.bitisle.net/tags/rfc/</loc>
+    <lastmod>2025-02-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.bitisle.net/tags/gitlab/</loc>
     <lastmod>2025-02-12</lastmod>
     <changefreq>weekly</changefreq>
@@ -322,14 +322,7 @@
   </url>
   
   <url>
-    <loc>https://blog.bitisle.net/tags/fido/</loc>
-    <lastmod>2025-02-12</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.bitisle.net/tags/git/</loc>
+    <loc>https://blog.bitisle.net/tags/gnupg/</loc>
     <lastmod>2025-02-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -350,7 +343,14 @@
   </url>
   
   <url>
-    <loc>https://blog.bitisle.net/tags/gnupg/</loc>
+    <loc>https://blog.bitisle.net/tags/fido/</loc>
+    <lastmod>2025-02-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.bitisle.net/tags/git/</loc>
     <lastmod>2025-02-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
