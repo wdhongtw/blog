@@ -268,6 +268,20 @@
   </url>
   
   <url>
+    <loc>https://blog.bitisle.net/tags/email/</loc>
+    <lastmod>2025-02-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.bitisle.net/tags/rfc/</loc>
+    <lastmod>2025-02-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.bitisle.net/tags/docker/</loc>
     <lastmod>2025-02-27</lastmod>
     <changefreq>weekly</changefreq>
@@ -283,20 +297,6 @@
   
   <url>
     <loc>https://blog.bitisle.net/tags/security/</loc>
-    <lastmod>2025-02-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.bitisle.net/tags/email/</loc>
-    <lastmod>2025-02-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.bitisle.net/tags/rfc/</loc>
     <lastmod>2025-02-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -359,14 +359,14 @@
   </url>
   
   <url>
-    <loc>https://blog.bitisle.net/tags/generic/</loc>
+    <loc>https://blog.bitisle.net/tags/community/</loc>
     <lastmod>2025-02-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://blog.bitisle.net/tags/community/</loc>
+    <loc>https://blog.bitisle.net/tags/generic/</loc>
     <lastmod>2025-02-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
