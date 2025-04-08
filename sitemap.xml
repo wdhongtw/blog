@@ -345,6 +345,13 @@
   </url>
   
   <url>
+    <loc>https://blog.bitisle.net/tags/gnupg/</loc>
+    <lastmod>2025-04-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.bitisle.net/tags/golang/</loc>
     <lastmod>2025-04-08</lastmod>
     <changefreq>weekly</changefreq>
@@ -360,13 +367,6 @@
   
   <url>
     <loc>https://blog.bitisle.net/tags/generic/</loc>
-    <lastmod>2025-04-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.bitisle.net/tags/gnupg/</loc>
     <lastmod>2025-04-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -471,14 +471,14 @@
   </url>
   
   <url>
-    <loc>https://blog.bitisle.net/tags/socks/</loc>
+    <loc>https://blog.bitisle.net/tags/ceph/</loc>
     <lastmod>2025-04-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://blog.bitisle.net/tags/ceph/</loc>
+    <loc>https://blog.bitisle.net/tags/socks/</loc>
     <lastmod>2025-04-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
