@@ -6,7 +6,7 @@
   <link href="https://blog.bitisle.net/atom.xml" rel="self"/>
   
   <link href="https://blog.bitisle.net/"/>
-  <updated>2025-02-26T01:05:00.000Z</updated>
+  <updated>2025-06-28T13:22:00.000Z</updated>
   <id>https://blog.bitisle.net/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Make shpool Easier to Use</title>
+    <link href="https://blog.bitisle.net/2025/06/28/easier-shpool.html"/>
+    <id>https://blog.bitisle.net/2025/06/28/easier-shpool.html</id>
+    <published>2025-06-28T13:22:00.000Z</published>
+    <updated>2025-06-28T13:22:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><code>shpool</code> is a tool like <code>tmux</code> and <code>screen</code> to keep persistent shell sessions across hangups.</p><p>It’s quite new (first released 2023), and extremely simple to use.Usually I only need one persistent shell in remote machine, and this tool, unlike <code>tmux</code>,is designed to support <strong>only one</strong> shell per session.That makes me very satisfied.</p><p>Currently there is no Bash auto-complete setup provided from the official repo.Therefore I implemented one for myself. With that, I can make my life easier. 🤣</p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">shpool &lt;tab&gt;  <span class="comment"># complete sub-commands like attach / list / help ...</span></span><br><span class="line">shpool attach &lt;tab&gt;  <span class="comment"># complete available sessions</span></span><br></pre></td></tr></table></figure><p>Here is the auto-complete setup script for Bash, for anyone who have same requirement.</p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># shellcheck shell=bash</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="title">_shpool_completions</span></span>() &#123;</span><br><span class="line"></span><br><span class="line">  [[ <span class="variable">$&#123;#COMP_WORDS[@]&#125;</span> -eq 1 ]] &amp;&amp; <span class="built_in">return</span> 0</span><br><span class="line">  [[ <span class="variable">$&#123;COMP_WORDS[0]&#125;</span> != <span class="string">&quot;shpool&quot;</span> ]] &amp;&amp; <span class="built_in">return</span> 0</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> [[ <span class="variable">$&#123;#COMP_WORDS[@]&#125;</span> -eq 2 ]]; <span class="keyword">then</span></span><br><span class="line">    <span class="built_in">local</span> commands=(attach detach <span class="built_in">kill</span> list version <span class="built_in">help</span>)</span><br><span class="line">    <span class="built_in">local</span> partial=<span class="string">&quot;<span class="variable">$&#123;COMP_WORDS[$COMP_CWORD]&#125;</span>&quot;</span></span><br><span class="line">    <span class="built_in">mapfile</span> -t COMPREPLY &lt; &lt;(compgen -W <span class="string">&quot;<span class="variable">$&#123;commands[*]&#125;</span>&quot;</span> -- <span class="string">&quot;<span class="variable">$&#123;partial&#125;</span>&quot;</span>)</span><br><span class="line">    <span class="built_in">return</span> 0</span><br><span class="line">  <span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line">  [[ <span class="variable">$&#123;#COMP_WORDS[@]&#125;</span> -ne 3 ]] &amp;&amp; <span class="built_in">return</span> 0</span><br><span class="line"></span><br><span class="line">  <span class="comment"># Now, try completing session names for commands that take them</span></span><br><span class="line">  <span class="built_in">local</span> partial=<span class="string">&quot;<span class="variable">$&#123;COMP_WORDS[$COMP_CWORD]&#125;</span>&quot;</span></span><br><span class="line">  <span class="built_in">local</span> <span class="built_in">command</span>=<span class="string">&quot;<span class="variable">$&#123;COMP_WORDS[$COMP_CWORD-1]&#125;</span>&quot;</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">case</span> <span class="string">&quot;<span class="variable">$&#123;command&#125;</span>&quot;</span> <span class="keyword">in</span></span><br><span class="line">    attach|detach|<span class="built_in">kill</span>)</span><br><span class="line">      <span class="built_in">local</span> -a sessions</span><br><span class="line">      <span class="built_in">mapfile</span> -t sessions &lt; &lt;(shpool list | <span class="built_in">tail</span> -n +2 | awk <span class="string">&#x27;&#123;print $1&#125;&#x27;</span>)</span><br><span class="line">      <span class="built_in">mapfile</span> -t COMPREPLY &lt; &lt;(compgen -W <span class="string">&quot;<span class="variable">$&#123;sessions[*]&#125;</span>&quot;</span> -- <span class="string">&quot;<span class="variable">$&#123;partial&#125;</span>&quot;</span>)</span><br><span class="line">      <span class="built_in">return</span> 0</span><br><span class="line">      ;;</span><br><span class="line">    *)</span><br><span class="line">      <span class="comment"># No need for other commands, they don&#x27;t take arguments</span></span><br><span class="line">      COMPREPLY=()</span><br><span class="line">      <span class="built_in">return</span> 0</span><br><span class="line">      ;;</span><br><span class="line">  <span class="keyword">esac</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">complete -F _shpool_completions shpool</span><br></pre></td></tr></table></figure><p>Wish this tool gain more public notice!</p><ul><li>GitHub Link: <a href="https://github.com/shell-pool/shpool">https://github.com/shell-pool/shpool</a></li></ul>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;&lt;code&gt;shpool&lt;/code&gt; is a tool like &lt;code&gt;tmux&lt;/code&gt; and &lt;code&gt;screen&lt;/code&gt; to keep persistent shell sessions across hangups.&lt;/p&gt;
+&lt;p&gt;It’</summary>
+      
+    
+    
+    
+    <category term="tips" scheme="https://blog.bitisle.net/categories/tips/"/>
+    
+    
+    <category term="shell" scheme="https://blog.bitisle.net/tags/shell/"/>
+    
+    <category term="terminal" scheme="https://blog.bitisle.net/tags/terminal/"/>
+    
+  </entry>
   
   <entry>
     <title>Easier Iteration with Generator</title>
@@ -550,36 +577,6 @@ Remote Development 系列 extension 加入了新成員:
     <category term="security" scheme="https://blog.bitisle.net/tags/security/"/>
     
     <category term="gnupg" scheme="https://blog.bitisle.net/tags/gnupg/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>保護存在檔案系統上的 Docker 登入密碼</title>
-    <link href="https://blog.bitisle.net/2021/03/04/docker-credential-helper.html"/>
-    <id>https://blog.bitisle.net/2021/03/04/docker-credential-helper.html</id>
-    <published>2021-03-04T00:00:00.000Z</published>
-    <updated>2021-03-04T00:00:00.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>在企業內部的工作環境中，常會碰到需要存取 private registry 上的 image 的狀況。以 Docker 的工作流程來說，一般要透過執行 <code>docker login</code> 來存取 private registry。不過，若事先毛設定好 <em>docker credential helper</em>，執行 <code>docker login</code> 會導致我們的密碼 &#x2F; API token 直接以明文的方式寫在檔案系統上。</p><p>這篇筆記說明如何在 Linux 環境下安裝與設定 <em>docker credential helper</em>。</p><h2 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h2><p>至 docker&#x2F;docker-credential-helpers 的 GitHub release 頁面下載最新版本的<code>docker-credential-secretservice</code>。</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -L https://github.com/docker/docker-credential-helpers/releases/download/v0.6.3/docker-credential-secretservice-v0.6.3-amd64.tar.gz &gt;secretservice.tar.gz</span><br></pre></td></tr></table></figure><p>解壓縮並把執行檔放到任意一個 PATH 資料夾內。</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">tar -zxv -f secretservice.tar.gz</span><br><span class="line">chmod +x docker-credential-secretservice</span><br><span class="line">mv docker-credential-secretservice ~/.local/bin</span><br></pre></td></tr></table></figure><h2 id="Configuration"><a href="#Configuration" class="headerlink" title="Configuration"></a>Configuration</h2><p>為了讓 <code>docker</code> 工具知道我們要用 credential helper，需要調整家目錄下的設定檔。</p><p>在設定檔 <code>~/.docker/config.json</code> 內加入 <code>credsStore</code> 設定。</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$</span><span class="language-bash">EDITOR ~/.docker/config.json</span></span><br></pre></td></tr></table></figure><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;credsStore&quot;</span><span class="punctuation">:</span> <span class="string">&quot;secretservice&quot;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure><p>註: 此資料夾和 JSON 檔案可能不存在。若沒有自己創一個即可。</p><p>註: 根據文件，此欄位的值與是 helper binary 的後綴對齊，因為 Linux 環境使用的 binary 是<code>docker-credential-secretservice</code> 所以需要填入的值爲 <code>secretservice</code></p><h2 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h2><p>如果已經有登入過某 registry，需要手動登出。</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker logout registry.example.com</span><br></pre></td></tr></table></figure><p>(重新) 登入該 registry。</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker login registry.example.com</span><br></pre></td></tr></table></figure><p>檢視 <code>~/.docker/config.json</code> 並確認對應的身分紀錄是空白的。</p><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;auths&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">        <span class="attr">&quot;registry.example.com&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span><span class="punctuation">&#125;</span></span><br><span class="line">    <span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure><p>若有安裝 Seahorse 程式的話，此時可以看到 secret 被放在 Login keyring 中。</p><p>如果設定錯誤的話，登入資訊會以編碼過的方式呈現在該紀錄中。</p><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;auths&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">        <span class="attr">&quot;registry.example.com&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">            <span class="attr">&quot;auth&quot;</span><span class="punctuation">:</span> <span class="string">&quot;c3R...zE2&quot;</span></span><br><span class="line">        <span class="punctuation">&#125;</span></span><br><span class="line">    <span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure><h2 id="Future-Reading"><a href="#Future-Reading" class="headerlink" title="Future Reading"></a>Future Reading</h2><ul><li><a href="https://docs.docker.com/engine/reference/commandline/login/">docker login - Docker Documentation</a></li><li><a href="https://github.com/docker/docker-credential-helpers">docker&#x2F;docker-credential-helpers</a></li><li><a href="https://wiki.archlinux.org/index.php/GNOME/Keyring">GNOME&#x2F;Keyring - ArchWiki</a></li></ul>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;在企業內部的工作環境中，常會碰到需要存取 private registry 上的 image 的狀況。
-以 Docker 的工作流程來說，一般要透過執行 &lt;code&gt;docker login&lt;/code&gt; 來存取 private registry。
-不過，若事先毛設定好 &lt;</summary>
-      
-    
-    
-    
-    <category term="notes" scheme="https://blog.bitisle.net/categories/notes/"/>
-    
-    
-    <category term="docker" scheme="https://blog.bitisle.net/tags/docker/"/>
-    
-    <category term="secret" scheme="https://blog.bitisle.net/tags/secret/"/>
-    
-    <category term="security" scheme="https://blog.bitisle.net/tags/security/"/>
     
   </entry>
   
